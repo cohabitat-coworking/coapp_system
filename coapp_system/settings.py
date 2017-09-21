@@ -169,3 +169,5 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 MEDIA_ROOT = PROJECT_ROOT + '/static/media'
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'home'

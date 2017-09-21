@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 
-def login(request):
+@login_required(login_url="login/")
+def home(request):
     # Render the HTML template index.html with the data in the context variable
     return render(
         request,
-        'registration/login.html',
+        'menu.html',
     )

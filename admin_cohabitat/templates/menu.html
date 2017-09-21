@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto+Slab:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static "admin_cohabitat/css/style.css" %}">
     <title>Admin-Menu</title>
 </head>
 <body id="config">
- 
-  <nav class="navbar">
+
+<nav class="navbar">
         <span class="open-slide">
             <a href="#" onclick="openSlideMenu()">
                 <svg width="30" height="30">
@@ -18,44 +19,44 @@
                 </svg>
             </a>
         </span>
-        
-        <ul class="navbar-nav" >
-           
-            <li><a href="#"><span>&#xe986;</span></a></li>
-            
-            <div class="dropdown">
-                 <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
-                  <div id="myDropdown" class="dropdown-content">
-                    <a href="login.html">Sair</a>
-                  </div>
+
+    <ul class="navbar-nav">
+
+        <li><a href="#"><span>&#xe986;</span></a></li>
+
+        <div class="dropdown">
+            <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="registration/login.html">Sair</a>
             </div>
-            <li><a href="#"><img src="img/batman.png" alt="Foto do Perfil"></a></li>
-        </ul>
-    </nav>
-    
-     <div id="side-menu" class="side-nav">
-       <img src="img/logo-login.png" alt="Logo Coworking" class="logo-menu">
-        <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
-        <a href="menu.html" class="active"><span>&#xe900;</span>MENU</a>
-        <a href="config.html"><span>&#xe994;</span>CONFIGURAÇÕES</a>
-        <a href="recursos.html"><span>&#xe9a8;</span>RECURSOS</a>
-        <a href="planos.html"><span>&#xe90e;</span>PLANOS</a>
-        <a href="itens.html"><span>&#xe923;</span>ITENS</a>
-        <a href="agenda.html"><span>&#xe900;</span>AGENDA</a>
-        <a href="clientes.html"><span>&#xe972;</span>CLIENTES</a>
-    </div>
-    <div id="main">
-       <div class="wrapper">
-            <h1 class="titulo">Painel Administrativo</h1>
-            
-            <div class="mensagem">
-                <p>Seja bem-vindo Sr(a)<span class="username">Batman</span></p>
-            </div>
-            
         </div>
+        <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
+    </ul>
+</nav>
+
+<div id="side-menu" class="side-nav">
+    <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
+    <a href="menu.html" class="active"><span>&#xe900;</span>MENU</a>
+    <a href="config.html"><span>&#xe994;</span>CONFIGURAÇÕES</a>
+    <a href="recursos.html"><span>&#xe9a8;</span>RECURSOS</a>
+    <a href="planos.html"><span>&#xe90e;</span>PLANOS</a>
+    <a href="itens.html"><span>&#xe923;</span>ITENS</a>
+    <a href="agenda.html"><span>&#xe900;</span>AGENDA</a>
+    <a href="clientes.html"><span>&#xe972;</span>CLIENTES</a>
+</div>
+<div id="main">
+    <div class="wrapper">
+        <h1 class="titulo">Painel Administrativo</h1>
+
+        <div class="mensagem">
+            <p>Seja bem-vindo Sr(a)<span class="username">Batman</span></p>
+        </div>
+
     </div>
-    
-    
-    <script src="js/main.js"></script>
+</div>
+
+
+<script src="{% static "admin_cohabitat/js/main.js" %}"></script>
 </body>
 </html>
