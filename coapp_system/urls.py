@@ -19,6 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^django_admin/', admin.site.urls),
     url(r'^api/v1/', include('backend.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include('admin_cohabitat.urls')),
     url(r'^', include('frontend_cohabitat.urls')),
 ]
