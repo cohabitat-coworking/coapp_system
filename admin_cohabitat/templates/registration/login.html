@@ -13,8 +13,8 @@
 <div class="container">
     <h1>Bem-vindo ao Co-habitat Sistema</h1><br>
     <p>Faça o login para ter acesso</p><br>
-
-    <form method="post" action="{% url 'login' %}">
+    {% url '/login'  as the_url %}
+    <form method="post">
         {% csrf_token %}
         <input name="username" type="text" placeholder="Usuário"><br>
         <input name="password" type="password" placeholder="Senha"><br>

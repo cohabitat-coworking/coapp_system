@@ -27,7 +27,8 @@
         <div class="dropdown">
             <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
             <div id="myDropdown" class="dropdown-content">
-                <a href="registration/login.html">Sair</a>
+                {% url 'logout'  as the_url %}
+                <a href="{{ the_url }}">Sair</a>
             </div>
         </div>
         <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
