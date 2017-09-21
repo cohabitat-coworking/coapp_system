@@ -171,3 +171,4 @@ MEDIA_ROOT = PROJECT_ROOT + '/static/media'
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'home'
+
