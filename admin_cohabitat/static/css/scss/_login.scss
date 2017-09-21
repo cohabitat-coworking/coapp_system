@@ -1,0 +1,127 @@
+/*-------------------------Estilos gerais---------------------------*/
+*{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+
+#login{
+    background: $cinza-escuro;
+  
+}
+button{
+    margin: 20px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+    padding:10px 20px;
+    font-family: $fonte-1;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s all ease;
+    &:hover{
+        background: $branco;
+        color: $cinza-escuro;
+    }
+}
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    background: $verde-escuro;
+    margin-top: 200px;
+    padding: 60px 50px;
+    border-radius: 10px;
+    z-index: 2;
+    text-align: center;
+    color: $branco;
+    flex-direction: row;
+    justify-content:flex-end;
+    
+    h1{
+        font-family: $fonte-1;
+        font-weight: 700;
+        font-size: 30px;
+        margin: 0 auto;
+        padding: 20px 0 10px 0;   
+        }
+    p{
+        font-family: $fonte-2;
+        font-size: 20px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+    
+}
+form{
+    flex: 1 1 800px;
+    justify-content: flex-start;
+    input{
+        font-family: $fonte-2;
+        font-size: 1em;
+        color: $branco;
+        width: 50%;
+        height: 50px;
+        background: rgba(255,255,255,.4);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 0;
+        transition: .3s all ease;
+        &:focus, &:hover{
+            border: 4px solid $cinza-escuro;
+            outline: none;
+        }
+    }
+         ::-webkit-input-placeholder { /* Chrome */
+          color: $branco;
+             opacity: 0.7;
+        }
+      ::-ms-input-placeholder { /* IE 10+ */
+          color: $branco;
+          opacity: 0.7;
+        }
+      ::-moz-placeholder { /* Firefox 19+ */
+          color: $branco;
+          opacity: 0.7;
+        }
+       ::-moz-placeholder { /* Firefox 4 - 18 */
+          color: $branco;
+          opacity: 0.7;
+        }
+    .btn-entrar{
+        background: $verde-claro;
+        color: $branco;
+        &:hover{
+            background: $cinza-escuro;
+            color: $branco;
+        }
+    }
+    .btn-senha{
+        font-size: 18px;
+        text-transform: none;
+        background: rgba(63,60,60,.5);
+        color: rgba(255,255,255,0.5);
+        &:hover{
+            background: rgba(63,60,60,1);
+            color: rgba(255,255,255,1);
+        }
+    }
+}
+
+.logo{
+   z-index: 100000;
+    position: absolute;
+    top: 100px;
+    left: 45%;
+    right: 50%;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,295 @@
+/*----------------------Sidebar----------------------------*/
+body{
+  font-family: $fonte-1;
+  background-color:$creme;
+  overflow-x:hidden;
+}
+span{
+    font-family: "icomoon";
+    margin: 0 15px;
+    font-size: 1.25em;
+}
+
+.navbar{
+  background-color: #588276;
+  height:75px;
+}
+.navbar-nav{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+}
+
+.navbar-nav a{
+  display:flex;
+  flex-wrap: wrap;
+  color:#f2f2f2;
+  text-align:center;
+  padding: 0;
+  text-transform: uppercase;
+  margin-left: 15px;
+  text-decoration:none;
+  font-size:22px;
+    span{
+        margin: 0 10px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    img{
+        margin-left: 10px;
+        margin-top: -5px;
+    }
+}
+
+.navbar ul{
+  margin:0 0 0 0;
+  list-style:none;
+}
+
+.navbar a:hover{
+  color:$cinza-escuro;
+}
+
+.side-nav{
+  
+  height:100%;
+  width:0;
+  position:fixed;
+  z-index:1;
+  top:0;
+  left:0;
+  background-color:#46685e;
+  overflow-x:hidden;
+  padding-top:80px;
+  transition:0.5s all ease;
+}
+
+.side-nav a{
+  font-weight: 700;
+  padding:10px 10px 10px 30px;
+  text-decoration:none;
+  font-size:23px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color:$branco;
+  display:block;
+  opacity: 0.5;
+  transition:0.3s;
+}
+
+
+.side-nav a:hover{
+  opacity: 1;
+}
+
+.side-nav .btn-close{
+  position:absolute;
+  top:0;
+  right:22px;
+  font-size:36px;
+  margin-left:50px;
+}
+.side-nav {
+    .btn-close span{
+        font-size: 26px;
+        opacity: 1;
+        color: $vermelho;
+    }
+    .active{
+        opacity: 1;
+    }
+}
+
+#main{
+  transition:margin-left 0.5s;
+  padding:20px;
+  overflow:hidden;
+  width:100%;
+    
+}
+
+@media(max-width:568px){
+  .navbar-nav{display:none}
+}
+
+@media(min-width:568px){
+  /*.open-slide{display:none}*/
+}
+.open-slide a{
+    background-color: #46685e;
+    float: left;
+    z-index: 44444;
+    padding:20px 30px;
+}
+.logo-menu{
+    max-width: 75%; 
+    margin:0 auto;
+    margin-bottom: 20px; 
+}
+/*------------------Main----------------*/
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 20px;
+    padding: 30px 30px;
+    border-radius: 10px;
+    background: $verde-escuro;
+    z-index: 2;
+    text-align: center;
+    color: $branco;
+    flex-direction: row;
+    justify-content:flex-end;
+    .form-1{
+        text-align: left;
+        flex-wrap: wrap;
+        input{
+            background: $cinza-escuro;
+             @include device(large){
+                width: 300px;
+            }
+            @include device(medium){
+                width: 450px;
+                margin-right: 20px;
+            }
+            @include device(small){
+                width: 350px;
+            }
+            &:focus, &:hover{
+                border: none;
+                background: $verde-claro;
+            }
+        }
+    }
+}
+.flex-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.col{
+    flex: 1;
+    margin-top: 40px;
+}
+.titulo{
+    width: 100%;
+    font-family: $fonte-1;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $branco;
+    background: $cinza-escuro;
+    padding: 35px 50px;
+    border-radius: 10px;
+    margin: 0 auto;
+    letter-spacing: .1em;
+    @include device(small){
+        font-size: 30px;
+    }
+}
+
+.subtitulo{
+    font-family: $fonte-1;
+    text-align: left;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: $cinza-escuro;
+    letter-spacing: .1em;
+    margin: 10px 15px;
+    padding: 10px 15px;
+    @include device(small){
+        font-size: 20px;
+    }
+    &::after{
+        content: "";
+        display: block;
+        background: $cinza-escuro;
+        width: 50px;
+        height: 4px;
+        margin: 8px 3px;
+    }
+}
+
+.logotipo{
+    border: 4px solid $cinza-escuro;
+    background: $branco;
+    border-radius: 10px;
+    p{
+        color: $cinza-escuro;
+        background: $creme;
+        width: 60px;
+        height: 50px;
+        border-radius: 10px;
+        margin: 0 auto;
+        padding-top: 15px;
+    }
+}
+
+.form-2{
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+}
+.contato{
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    .subtitulo{
+        margin-right: 380px;
+        padding: 30px 0;
+        @include device(medium){
+           margin-right: 250px;
+        }
+        @include device(small){
+           margin-right: 80px;
+            
+        }
+    }
+    
+}
+/*------------------Buttons-----------------*/
+
+.btn-small{
+    font-size: 14px;
+    background: $cinza-escuro;
+    color: $branco;
+    margin: 20px 50px;
+    @include device(small){
+       font-size: 12px;
+    }
+    &:hover{
+        background: $verde-escuro;
+        color: $branco;
+    }
+}
+
+.btn-cancelar{
+    background: $vermelho;
+    color: $branco;
+    &:hover{
+        background: $branco;
+        color: $vermelho;
+    }
+    @include device(small){
+       font-size: 20px;
+    }
+   
+}
+.btn-salvar{
+    background: $cinza-escuro;
+    color: $branco;
+    @include device(small){
+       font-size: 20px;
+    }
+}
+
+
+
+
+

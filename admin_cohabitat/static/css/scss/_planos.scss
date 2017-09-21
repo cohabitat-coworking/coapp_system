@@ -1,0 +1,23 @@
+.planos, .itens{
+    display: flex;
+    flex-direction: row;
+    .subtitulo{
+        text-align: center;
+       margin: 0 auto;
+        
+        &:after{
+            margin: 8px auto;
+            width: 80px;
+        }
+        width: 800px;
+    }
+    .table{
+        max-width: 100%;
+        margin: 0 auto;
+        
+    }
+    button{
+        font-size: 25px;
+    }
+    
+}

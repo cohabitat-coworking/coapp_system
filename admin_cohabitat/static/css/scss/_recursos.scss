@@ -1,0 +1,75 @@
+.table{
+    display: table;
+    font-family: $fonte-2;
+    @include device(medium){
+        margin: 0 auto;
+    }
+      @include device(small){
+        max-width: 100%;
+          font-size: 14px;
+          margin: 0 auto;
+    }
+    a{
+        color: $branco;
+        font-size: 20px;
+        transition: .5s all ease;
+        &:hover{
+            color: $cinza-escuro;
+        }
+    }
+    .subtitulo{
+        display: table-caption;
+    }
+    .th-cadastro{
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        background: $cinza-escuro;
+       
+    }
+    .row{
+        display: table-row;
+        
+    }
+    .cell{
+        display: table-cell;
+        border-right: 2px solid $cinza-escuro;
+        border-top: 2px solid $cinza-escuro;
+        padding: 20px;
+        @include device(small){
+        padding: 10px;
+        }
+        &:first-child{
+            border-left: 2px solid $cinza-escuro;
+        }
+    }
+    .top{
+        &:first-child{
+            border-top-left-radius: 10px;
+        }
+        &:last-child{
+            border-top-right-radius: 10px;
+        }
+    }
+    .bottom{
+        border-bottom: 2px solid $cinza-escuro;
+        &:first-child{
+            border-bottom-left-radius: 10px;
+        }
+        &:last-child{
+            border-bottom-right-radius: 10px;
+        }
+    }
+    
+}
+.btn-small.btn-table{
+    background: $verde-claro;
+    color: $cinza-escuro;
+    &:hover{
+    background: $cinza-escuro;
+    color: $verde-claro;
+    }
+    
+}
+
