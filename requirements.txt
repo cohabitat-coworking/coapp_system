@@ -1,0 +1,15 @@
+cffi==1.10.0
+coverage==3.6
+dj-database-url==0.4.2
+Django==1.10.7
+djangorestframework==3.6.3
+gunicorn==19.7.1
+olefile==0.44
+Pillow==4.2.1
+psycopg2==2.6.2
+pycparser==2.18
+pylokit==0.8.1
+pytz==2017.2
+six==1.10.0
+templated-docs==0.3.1
+whitenoise==3.3.0
