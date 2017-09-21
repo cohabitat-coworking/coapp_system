@@ -26,7 +26,7 @@ class GetAllContactsTest(APITestCase):
     def test_get_all_contacts(self):
         self.client.force_login(user=self.user)
 
-        response = self.client.get('/api/coworkings/{}/contact_infos'.format(self.coworking.id),
+        response = self.client.get('/api/v1/coworkings/{}/contact_infos'.format(self.coworking.id),
                                    HTTP_AUTHORIZATION=self.token)
 
         contact_infos = ContactInfo.objects.filter(coworking=self.coworking)
@@ -39,7 +39,7 @@ class GetAllContactsTest(APITestCase):
     def test_get_contact_types(self):
         self.client.force_login(user=self.user)
 
-        response = self.client.get('/api/coworkings/{}/contact_types'.format(self.coworking.id),
+        response = self.client.get('/api/v1/coworkings/{}/contact_types'.format(self.coworking.id),
                                    HTTP_AUTHORIZATION=self.token)
 
         contact_types = ContactType.objects.filter(coworking=self.coworking)
@@ -53,7 +53,7 @@ class GetAllContactsTest(APITestCase):
         self.client.force_login(user=self.user)
 
         response = self.client.get(
-            '/api/coworkings/{}/contact_infos'.format(2),
+            '/api/v1/coworkings/{}/contact_infos'.format(2),
             HTTP_AUTHORIZATION=self.token)
 
         self.assertEqual(status.HTTP_404_NOT_FOUND, response.status_code)
@@ -77,7 +77,7 @@ class CreateContactInfoTest(APITestCase):
 
         serialized_contact = {"contact_info": ContactInfoCreationSerializer(contact_info).data}
 
-        response = self.client.post('/api/coworkings/{}/contact_infos'.format(self.coworking.id), serialized_contact,
+        response = self.client.post('/api/v1/coworkings/{}/contact_infos'.format(self.coworking.id), serialized_contact,
                                     HTTP_AUTHORIZATION=self.token,
                                     format='json')
 
@@ -96,7 +96,7 @@ class CreateContactInfoTest(APITestCase):
 
         serialized_contact = {"contact_info": ContactInfoSerializer(contact_info).data}
 
-        response = self.client.post('/api/coworkings/{}/contact_infos'.format(self.coworking.id), serialized_contact,
+        response = self.client.post('/api/v1/coworkings/{}/contact_infos'.format(self.coworking.id), serialized_contact,
                                     HTTP_AUTHORIZATION=self.token,
                                     format='json')
 
@@ -112,7 +112,7 @@ class CreateContactInfoTest(APITestCase):
         contact_info_json = {"coworking": CoworkingSerializer(self.coworking).data, "nome": "A Name"}
         serialized_contact = {"cotact_info": contact_info_json}
 
-        response = self.client.post('/api/coworkings/{}/contact_infos'.format(self.coworking.id), serialized_contact,
+        response = self.client.post('/api/v1/coworkings/{}/contact_infos'.format(self.coworking.id), serialized_contact,
                                     HTTP_AUTHORIZATION=self.token,
                                     format='json')
 
@@ -127,7 +127,7 @@ class CreateContactInfoTest(APITestCase):
 
         serialized_contact = {"contact_info": ContactInfoCreationSerializer(contact_info).data}
 
-        response = self.client.post('/api/coworkings/{}/contact_infos'.format(2), serialized_contact,
+        response = self.client.post('/api/v1/coworkings/{}/contact_infos'.format(2), serialized_contact,
                                     HTTP_AUTHORIZATION=self.token,
                                     format='json')
 
@@ -152,7 +152,7 @@ class GetSingleContactTest(APITestCase):
         self.client.force_login(user=self.user)
 
         response = self.client.get(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id),
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id),
             HTTP_AUTHORIZATION=self.token)
 
         contact_info = ContactInfo.objects.get(pk=self.contact_info.id)
@@ -166,7 +166,7 @@ class GetSingleContactTest(APITestCase):
         self.client.force_login(user=self.user)
 
         response = self.client.get(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, 2),
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, 2),
             HTTP_AUTHORIZATION=self.token)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
@@ -174,7 +174,7 @@ class GetSingleContactTest(APITestCase):
         self.client.force_login(user=self.user)
 
         response = self.client.get(
-            '/api/coworkings/{}/contact_infos/{}'.format(2, self.contact_info.id),
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(2, self.contact_info.id),
             HTTP_AUTHORIZATION=self.token)
 
         self.assertEqual(status.HTTP_404_NOT_FOUND, response.status_code)
@@ -198,7 +198,7 @@ class DeleteContactTest(APITestCase):
         self.client.force_login(user=self.user)
 
         response = self.client.delete(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id),
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id),
             HTTP_AUTHORIZATION=self.token)
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
@@ -207,7 +207,7 @@ class DeleteContactTest(APITestCase):
         self.client.force_login(user=self.user)
 
         response = self.client.delete(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, 2),
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, 2),
             HTTP_AUTHORIZATION=self.token)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
@@ -215,7 +215,7 @@ class DeleteContactTest(APITestCase):
         self.client.force_login(user=self.user)
 
         response = self.client.delete(
-            '/api/coworkings/{}/contact_infos/{}'.format(2, self.contact_info.id),
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(2, self.contact_info.id),
             HTTP_AUTHORIZATION=self.token)
 
         self.assertEqual(status.HTTP_404_NOT_FOUND, response.status_code)
@@ -243,7 +243,7 @@ class UpdateContactTest(APITestCase):
         serialized_edited = {"contact_info": ContactInfoCreationSerializer(self.contact_info).data}
 
         response = self.client.patch(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id), serialized_edited,
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id), serialized_edited,
             HTTP_AUTHORIZATION=self.token, format='json')
 
         update_contact = ContactInfo.objects.get(pk=self.contact_info.id)
@@ -259,7 +259,7 @@ class UpdateContactTest(APITestCase):
         serialized_edited = {"contact_info": ContactInfoSerializer(self.contact_info).data}
 
         response = self.client.patch(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id), serialized_edited,
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id), serialized_edited,
             HTTP_AUTHORIZATION=self.token, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
@@ -272,7 +272,7 @@ class UpdateContactTest(APITestCase):
         serialized_edited = {"contct_nfo": ContactInfoSerializer(self.contact_info).data}
 
         response = self.client.patch(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id), serialized_edited,
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, self.contact_info.id), serialized_edited,
             HTTP_AUTHORIZATION=self.token, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
@@ -285,7 +285,7 @@ class UpdateContactTest(APITestCase):
         serialized_edited = {"contact_info": ContactInfoCreationSerializer(self.contact_info).data}
 
         response = self.client.patch(
-            '/api/coworkings/{}/contact_infos/{}'.format(2, self.contact_info.id), serialized_edited,
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(2, self.contact_info.id), serialized_edited,
             HTTP_AUTHORIZATION=self.token, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
@@ -298,7 +298,7 @@ class UpdateContactTest(APITestCase):
         serialized_edited = {"contact_info": ContactInfoCreationSerializer(self.contact_info).data}
 
         response = self.client.patch(
-            '/api/coworkings/{}/contact_infos/{}'.format(self.coworking.id, 2), serialized_edited,
+            '/api/v1/coworkings/{}/contact_infos/{}'.format(self.coworking.id, 2), serialized_edited,
             HTTP_AUTHORIZATION=self.token, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)

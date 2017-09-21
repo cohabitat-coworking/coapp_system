@@ -21,7 +21,7 @@ class GetAllCoworkingsTest(APITestCase):
     def test_get_all_coworkings(self):
         self.client.force_login(user=self.user)
 
-        response = self.client.get('/api/coworkings', HTTP_AUTHORIZATION=self.token)
+        response = self.client.get('/api/v1/coworkings', HTTP_AUTHORIZATION=self.token)
 
         coworkings = Coworking.objects.all()
         serialized_coworkings = CoworkingSerializer(coworkings, many=True)
@@ -30,7 +30,7 @@ class GetAllCoworkingsTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_all_coworkings_unnothorized(self):
-        response = self.client.get('/api/coworkings')
+        response = self.client.get('/api/v1/coworkings')
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
 
@@ -51,17 +51,17 @@ class GetSingleCoworkingTest(APITestCase):
         coworking_id = coworking.id
         serialized_coworking = CoworkingSerializer(coworking)
         final_coworking = {"coworking": serialized_coworking.data}
-        response = self.client.get('/api/coworkings/{}'.format(coworking_id), HTTP_AUTHORIZATION=self.token)
+        response = self.client.get('/api/v1/coworkings/{}'.format(coworking_id), HTTP_AUTHORIZATION=self.token)
         self.assertEqual(response.data, final_coworking)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_single_coworking_not_found(self):
         self.client.force_login(user=self.user)
-        response = self.client.get('/api/coworkings/3', HTTP_AUTHORIZATION=self.token)
+        response = self.client.get('/api/v1/coworkings/3', HTTP_AUTHORIZATION=self.token)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
     def test_get_single_coworking_unauthorized(self):
-        response = self.client.get('/api/coworkings/1')
+        response = self.client.get('/api/v1/coworkings/1')
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
 
@@ -81,7 +81,7 @@ class CreateCoworkingTest(APITestCase):
 
         serialized_coworking = {"coworking": CoworkingCreationSerializer(coworking).data}
 
-        response = self.client.post('/api/coworkings', serialized_coworking, HTTP_AUTHORIZATION=self.token,
+        response = self.client.post('/api/v1/coworkings', serialized_coworking, HTTP_AUTHORIZATION=self.token,
                                     format='json')
 
         received_coworking = response.data["coworking"]
@@ -96,7 +96,7 @@ class CreateCoworkingTest(APITestCase):
                                              cnpj="123456789012")
 
         serialized_coworking = CoworkingCreationSerializer(coworking).data
-        response = self.client.post('/api/coworkings', serialized_coworking, HTTP_AUTHORIZATION=self.token,
+        response = self.client.post('/api/v1/coworkings', serialized_coworking, HTTP_AUTHORIZATION=self.token,
                                     format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
@@ -105,7 +105,7 @@ class CreateCoworkingTest(APITestCase):
 
         coworking = {"name": "Teste coworking", "cnpn": "123456789012"}
 
-        response = self.client.post('/api/coworkings', coworking, HTTP_AUTHORIZATION=self.token,
+        response = self.client.post('/api/v1/coworkings', coworking, HTTP_AUTHORIZATION=self.token,
                                     format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
@@ -124,13 +124,13 @@ class DeleteCoworkingTest(APITestCase):
         coworking = Coworking.objects.all()[0]
         coworking_id = coworking.id
 
-        response = self.client.delete('/api/coworkings/{}'.format(coworking_id), HTTP_AUTHORIZATION=self.token)
+        response = self.client.delete('/api/v1/coworkings/{}'.format(coworking_id), HTTP_AUTHORIZATION=self.token)
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_delete_coworking_not_found(self):
         self.client.force_login(user=self.user)
-        response = self.client.delete('/api/coworkings/2', HTTP_AUTHORIZATION=self.token)
+        response = self.client.delete('/api/v1/coworkings/2', HTTP_AUTHORIZATION=self.token)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
 
@@ -153,7 +153,7 @@ class EditCoworkingTest(APITestCase):
 
         serialized_coworking = {"coworking": CoworkingCreationSerializer(coworking).data}
 
-        response = self.client.patch('/api/coworkings/{}'.format(coworking_id), serialized_coworking,
+        response = self.client.patch('/api/v1/coworkings/{}'.format(coworking_id), serialized_coworking,
                                      HTTP_AUTHORIZATION=self.token, format='json')
 
         update_coworking = Coworking.objects.get(pk=coworking_id)

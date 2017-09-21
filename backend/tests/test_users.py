@@ -27,7 +27,7 @@ class GetAllUsersTest(APITestCase):
         self.token = Token.objects.create(user=self.user)
 
         self.client.force_login(user=self.user)
-        response = self.client.get('/api/coworkings/{}/users'.format(self.coworking.id),
+        response = self.client.get('/api/v1/coworkings/{}/users'.format(self.coworking.id),
                                    HTTP_AUTHORIZATION=self.token)
 
         personal_users = Profile.objects.filter(coworking=self.coworking)
@@ -49,7 +49,7 @@ class GetAllUsersTest(APITestCase):
         self.token = Token.objects.create(user=self.user)
 
         self.client.force_login(user=self.user)
-        response = self.client.get('/api/coworkings/{}/users/{}'.format(self.coworking.id, self.user1.id),
+        response = self.client.get('/api/v1/coworkings/{}/users/{}'.format(self.coworking.id, self.user1.id),
                                    HTTP_AUTHORIZATION=self.token)
 
         try:
