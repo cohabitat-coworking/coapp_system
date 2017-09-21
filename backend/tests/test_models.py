@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.test import TestCase
 
-from coapp.models import *
+from backend.models import *
 
 
 # Create your tests here.

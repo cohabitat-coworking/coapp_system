@@ -5,7 +5,7 @@ from django.test import RequestFactory
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 
-from coapp.serializers import *
+from backend.serializers import *
 
 
 class GetAllContactsTest(APITestCase):
