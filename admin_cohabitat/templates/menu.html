@@ -25,7 +25,7 @@
         <li><a href="#"><span>&#xe986;</span></a></li>
 
         <div class="dropdown">
-            <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
+            <li><a href="#" onclick="myFunction()" class="dropbtn">{{ request.user.first_name  }}<span>&#xf107;</span></a></li>
             <div id="myDropdown" class="dropdown-content">
                 {% url 'logout'  as the_url %}
                 <a href="{{ the_url }}">Sair</a>
@@ -51,7 +51,7 @@
         <h1 class="titulo">Painel Administrativo</h1>
 
         <div class="mensagem">
-            <p>Seja bem-vindo Sr(a)<span class="username">Batman</span></p>
+                <p>Seja bem-vindo Sr(a)<span class="username">{{ request.user.first_name  }}</span></p>
         </div>
 
     </div>
