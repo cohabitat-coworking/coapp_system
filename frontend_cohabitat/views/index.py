@@ -1,3 +1,4 @@
+from django.core.mail import EmailMessage
 from django.shortcuts import render
 
 
@@ -14,4 +15,26 @@ def planos(request):
 
 
 def sobre(request):
+    return render(request, 'sobre.html')
+
+
+def send_email(request):
+    if request.method == 'POST':
+        contact_name = request.POST.get('nome')
+        contact_email = request.POST.get('email')
+        contact_phone = request.POST.get('telefone')
+        message = request.POST.get('mensagem')
+
+        body = " Nome do contato: " + contact_name + " \n" + " Telefone: " + contact_phone + "\n" + " Email: " + contact_email + " \n" + "Mensagem: " + message
+
+        email = EmailMessage(
+            subject='Novo Contato',
+            body=body,
+            from_email=contact_email,
+            to=['contato@cohabitat.com.br', ],
+            headers={'Reply-To': contact_email}
+        )
+
+        email.send()
+
     return render(request, 'sobre.html')

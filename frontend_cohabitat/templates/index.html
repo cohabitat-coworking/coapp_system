@@ -191,7 +191,8 @@
             google.maps.event.addDomListener(window, 'load', init_map);</script>
         </div>
 
-        <form action="enviar.php" method="post" name="form" class="formphp formulario">
+        <form action="send_email" method="post" name="form" class="formphp formulario">
+            {% csrf_token %}
             <input id="nome" name="nome" type="text" placeholder="Nome">
             <input id="email" name="email" type="text" placeholder="E-mail">
             <input id="telefone" name="telefone" type="text" placeholder="Telefone">

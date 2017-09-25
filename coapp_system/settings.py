@@ -172,3 +172,8 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'home'
 
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'cohabitat'
+EMAIL_HOST_PASSWORD = 'cohabitat1@coworking'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
