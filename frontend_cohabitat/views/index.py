@@ -32,7 +32,7 @@ def send_email(request):
             body=body,
             from_email=contact_email,
             to=['contato@cohabitat.com.br', ],
-            headers={'Reply-To': contact_email},
+            headers={'Reply-To': contact_email, 'Content-Type': 'text/plain'},
 
         )
 

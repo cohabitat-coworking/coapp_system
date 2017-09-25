@@ -124,7 +124,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -192,8 +191,19 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'home'
 
+# EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+# MAILER_EMAIL_BACKEND = EMAIL_BACKEND
+# EMAIL_HOST = 'smtp.zoho.com'
+# EMAIL_HOST_USER = 'contato@cohabitat.com.br'
+# EMAIL_HOST_PASSWORD = 'cohabitat@2017'
+# EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'cohabitat'
-EMAIL_HOST_PASSWORD = 'cohabitat1@coworking'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
