@@ -1,6 +1,7 @@
 from django.core.mail import EmailMessage
 from django.shortcuts import render
 import os
+import logging
 
 from sendgrid import sendgrid
 from sendgrid.helpers.mail import *
@@ -23,6 +24,8 @@ def sobre(request):
 
 
 def send_email(request):
+    logger = logging.getLogger(__name__)
+
     if request.method == 'POST':
         sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
 
@@ -38,5 +41,7 @@ def send_email(request):
         mail = Mail(from_email, subject, to_email, content)
 
         response = sg.client.mail.send.post(request_body=mail.get())
+
+        logger.debug(response)
 
     return render(request, 'sobre.html')
