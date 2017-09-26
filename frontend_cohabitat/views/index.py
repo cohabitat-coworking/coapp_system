@@ -28,6 +28,7 @@ def send_email(request):
 
     if request.method == 'POST':
         key = os.environ.get('SENDGRID_API_KEY')
+        logger.debug("API KEY IS THIS>")
         logger.debug(key)
         sg = sendgrid.SendGridAPIClient(apikey=key)
         contact_name = request.POST.get('nome')
