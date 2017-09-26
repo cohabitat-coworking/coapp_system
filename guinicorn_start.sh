@@ -14,8 +14,8 @@ PORT=8001
 echo "Starting $NAME"
 
 cd /root/coapp_system
-source /root/coappenv/bin/activate
-source /root/coapp_system/sendgrid.env
+source ../coappenv/bin/activate
+source sendgrid.env
 
 test -d $LOGDIR || mkdir -p $LOGDIR
 
