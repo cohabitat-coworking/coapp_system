@@ -9,7 +9,7 @@ DJANGO_WSGI_MODULE=coapp_system.wsgi
 USER=root
 GROUP=sudo
 IP=0.0.0.0
-PORT=8001
+PORT=8030
 
 echo "Starting $NAME"
 
