@@ -1,3 +1,5 @@
+#!/bin/bash
+
 NAME="coapp_system"
 LOGFILE=/root/coapp_system/coapp_system/log/gunicorn.log
 LOGDIR=$(dirname $LOGFILE)
