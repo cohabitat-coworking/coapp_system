@@ -1,0 +1,30 @@
+<python_http_client.client.Response object at 0x7f8381680a50>
+Internal Server Error: /send_email
+Traceback (most recent call last):
+  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lds/ldsprojs/coapp_system/frontend_cohabitat/views/index.py", line 43, in send_email
+    response = sg.client.mail.send.post(request_body=mail.get())
+  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/python_http_client/client.py", line 227, in http_request
+    return Response(self._make_request(opener, request))
+  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/python_http_client/client.py", line 161, in _make_request
+    raise exc
+UnauthorizedError
+202
+
+Server: nginx
+Date: Tue, 26 Sep 2017 12:46:53 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Length: 0
+Connection: close
+X-Message-Id: I0AFxBeVR4SVBfuh3Cf8NQ
+Access-Control-Allow-Origin: https://sendgrid.api-docs.io
+Access-Control-Allow-Methods: POST
+Access-Control-Allow-Headers: Authorization, Content-Type, On-behalf-of, x-sg-elas-acl
+Access-Control-Max-Age: 600
+X-No-CORS-Reason: https://sendgrid.com/docs/Classroom/Basics/API/cors.html
+
