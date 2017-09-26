@@ -42,6 +42,9 @@ def send_email(request):
 
         response = sg.client.mail.send.post(request_body=mail.get())
 
-        logger.debug(response)
+        logger.debug(response.status_code)
+        logger.debug(response.body)
+        logger.debug(response.headers)
+
 
     return render(request, 'sobre.html')
