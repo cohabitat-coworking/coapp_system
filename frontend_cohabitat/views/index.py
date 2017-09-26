@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-from django.shortcuts import render
 
-
-def index(request):
-    # Render the HTML template index.html with the data in the context variable
-    return render(
-        request,
-        'index.html',
-    )
-
-
-def planos(request):
-    return render(request, 'planos.html')
-
-
-def sobre(request):
-    return render(request, 'sobre.html')
-=======
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.shortcuts import render
@@ -69,4 +51,4 @@ def send_email(request):
         logger.debug(response.headers)
 
     return render(request, 'sobre.html')
->>>>>>> b7dbd304e55ba402e2a7130abf0e95403d58b581
+

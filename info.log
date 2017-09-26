@@ -28,3 +28,4 @@ Access-Control-Allow-Headers: Authorization, Content-Type, On-behalf-of, x-sg-el
 Access-Control-Max-Age: 600
 X-No-CORS-Reason: https://sendgrid.com/docs/Classroom/Basics/API/cors.html
 
+Not Found: /favicon.ico

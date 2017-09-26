@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Django settings for coapp_system project.
 
@@ -170,7 +169,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 MEDIA_ROOT = PROJECT_ROOT + '/static/media'
 MEDIA_URL = '/media/'
-=======
+
 """
 Django settings for coapp_system project.
 
@@ -381,4 +380,3 @@ SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
->>>>>>> b7dbd304e55ba402e2a7130abf0e95403d58b581
