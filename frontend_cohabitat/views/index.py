@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.mail import EmailMessage
 from django.shortcuts import render
 import os
@@ -27,7 +28,7 @@ def send_email(request):
     logger = logging.getLogger(__name__)
 
     if request.method == 'POST':
-        key = os.environ.get('SENDGRID_API_KEY')
+        key = settings.SENDGRID_API_KEY
         logger.debug("API KEY IS THIS>")
         logger.debug(key)
         sg = sendgrid.SendGridAPIClient(apikey=key)

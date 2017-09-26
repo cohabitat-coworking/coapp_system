@@ -190,6 +190,7 @@ MEDIA_ROOT = PROJECT_ROOT + '/static/media'
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'home'
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
 # EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 # MAILER_EMAIL_BACKEND = EMAIL_BACKEND
