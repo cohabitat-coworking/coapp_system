@@ -1,5 +1,9 @@
 from django.core.mail import EmailMessage
 from django.shortcuts import render
+import os
+
+from sendgrid import sendgrid
+from sendgrid.helpers.mail import *
 
 
 def index(request):
@@ -20,22 +24,19 @@ def sobre(request):
 
 def send_email(request):
     if request.method == 'POST':
+        sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+
         contact_name = request.POST.get('nome')
-        contact_email = request.POST.get('email')
+        from_email = Email(request.POST.get('email'))
+        to_email = Email("contato@cohabitat.com.br")
         contact_phone = request.POST.get('telefone')
         message = request.POST.get('mensagem')
+        subject = "Novo Contato"
+        body = " Nome do contato: " + contact_name + " \n" + " Telefone: " + contact_phone + "\n" + " Email: " + from_email.__str__() + " \n" + "Mensagem: " + message
+        content = Content("text/plain", body)
 
-        body = " Nome do contato: " + contact_name + " \n" + " Telefone: " + contact_phone + "\n" + " Email: " + contact_email + " \n" + "Mensagem: " + message
+        mail = Mail(from_email, subject, to_email, content)
 
-        email = EmailMessage(
-            subject='Novo Contato',
-            body=body,
-            from_email=contact_email,
-            to=['contato@cohabitat.com.br', ],
-            headers={'Reply-To': contact_email, 'Content-Type': 'text/plain'},
-
-        )
-
-        email.send(fail_silently=False)
+        response = sg.client.mail.send.post(request_body=mail.get())
 
     return render(request, 'sobre.html')

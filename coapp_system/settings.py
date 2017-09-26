@@ -200,10 +200,10 @@ LOGIN_REDIRECT_URL = 'home'
 # EMAIL_USE_SSL = True
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = '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'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
