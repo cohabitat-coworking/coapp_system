@@ -27,8 +27,9 @@ def send_email(request):
     logger = logging.getLogger(__name__)
 
     if request.method == 'POST':
-        sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
-
+        key = os.environ.get('SENDGRID_API_KEY')
+        logger.debug(key)
+        sg = sendgrid.SendGridAPIClient(apikey=key)
         contact_name = request.POST.get('nome')
         from_email = Email(request.POST.get('email'))
         to_email = Email("contato@cohabitat.com.br")
@@ -45,6 +46,5 @@ def send_email(request):
         logger.debug(response.status_code)
         logger.debug(response.body)
         logger.debug(response.headers)
-
 
     return render(request, 'sobre.html')
