@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'admin_cohabitat/css/style.css' %}">
     <title>Admin-Login</title>
 </head>
 <body id="login">
-    
- <img src="img/logo-login.png" alt="Logo Coworking" class="logo">
+
+ <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo">
   <div class="container">
    <h1>Bem-vindo ao Co-habitat Sistema</h1><br>
     <p>Faça o login para ter acesso</p><br>

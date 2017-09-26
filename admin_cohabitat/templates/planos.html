@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto+Slab:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "admin_cohabitat/css/style.css" %}">
+    <title>Admin-Planos</title>
+</head>
+<body id="config">
+ 
+  <nav class="navbar">
+        <span class="open-slide">
+            <a href="#" onclick="openSlideMenu()">
+                <svg width="30" height="30">
+                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                </svg>
+            </a>
+        </span>
+        
+        <ul class="navbar-nav" >
+           
+            <li><a href="#"><span>&#xe986;</span></a></li>
+            <div class="dropdown">
+                 <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="login.html">Sair</a>
+                  </div>
+            </div>
+             <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
+        </ul>
+    </nav>
+    
+     <div id="side-menu" class="side-nav">
+       <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
+        <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
+        <a href="menu.html"><span>&#xe900;</span>MENU</a>
+        <a href="config.html"><span>&#xe994;</span>CONFIGURAÇÕES</a>
+        <a href="recursos.html"><span>&#xe9a8;</span>RECURSOS</a>
+        <a href="planos.html" class="active"><span>&#xe90e;</span>PLANOS</a>
+        <a href="itens.html"><span>&#xe923;</span>ITENS</a>
+        <a href="agenda.html"><span>&#xe900;</span>AGENDA</a>
+        <a href="clientes.html"><span>&#xe972;</span>CLIENTES</a>
+    </div>
+    <div id="main">
+       <div class="wrapper">
+            <h1 class="titulo">Painel Administrativo</h1>
+            
+              
+            <div class="contato cadastro planos">
+               <h2 class="subtitulo">Planos Fornecidos</h2>
+                <div class="table">
+
+                    <div class="th-cadastro">
+                        <div class="cell top">Descrição</div>
+                        <div class="cell top">Valor</div>
+                        <div class="cell top">Editor</div>
+                    </div>
+                    
+                    <div class="row td-cadastro">
+                        <div class="cell">Virtual</div>
+                        <div class="cell">R$ 150,00</div>
+                        <div class="cell">
+                            <a href=""><span>&#xe9ce;</span></a>
+                            <a href=""><span>&#xe905;</span></a>
+                            <a href=""><span>&#xe9ac;</span></a>
+                        </div>
+                    </div>
+                    
+                    <div class="row td-cadastro">
+                        <div class="cell">Compartilhado</div>
+                        <div class="cell">R$ 160,00</div>
+                        <div class="cell">
+                            <a href=""><span>&#xe9ce;</span></a>
+                            <a href=""><span>&#xe905;</span></a>
+                            <a href=""><span>&#xe9ac;</span></a>
+                        </div>
+                    </div>
+                    
+                     <div class="row td-cadastro">
+                        <div class="cell bottom">Privado</div>
+                        <div class="cell bottom">R$ 1500,00</div>
+                        <div class="cell bottom">
+                            <a href=""><span>&#xe9ce;</span></a>
+                            <a href=""><span>&#xe905;</span></a>
+                            <a href=""><span>&#xe9ac;</span></a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Trigger/Open The Modal -->
+                 
+                <form action="" class="form">
+                    
+                </form>
+                <button class="btn-small btn-table" id="myBtn">Montar Plano</button>
+            </div>
+
+            <form action="" class="form-2">
+              
+                <button class="btn-grande btn-cancelar">Cancelar</button>
+                <button class="btn-grande btn-salvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+<!-- The Modal -->
+   
+    <div id="myModal" class="modal">
+     <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+              <span class="close">&#xea0f;</span>
+              <h2 class="subtitulo">Montar Plano</h2>
+          </div>
+          <div class="modal-body wrapp">
+             
+                  <div class="desc">
+                      <h3>Descrição:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Privado">
+                      </form>
+                  </div>
+
+                  <div class="box-item">
+                      <h3 class="subtitulo">Consumíveis</h3>
+                       <!-- Checkbox -->
+                    <div class="exp">
+                       <div class="checkbox">
+                        <form>
+                          <div>
+                            <input type="checkbox" id="check" name="check" value="" >
+                            <label for="check">
+                              <span><!-- This span is needed to create the "checkbox" element --></span>Checkbox
+                            </label>
+                          </div>
+                        </form>
+                    </div>     
+                  </div>
+              </div>
+          </div>
+              <div class="modal-footer">
+                  <h3>Modal Footer</h3>
+              </div>
+        </div>
+    </div>
+   
+<script src="{% static "admin_cohabitat/js/main.js" %}"></script>
+</body>
+</html>

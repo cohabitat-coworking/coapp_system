@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto+Slab:400,700" rel="stylesheet">
+     <link rel="stylesheet" href="{% static "admin_cohabitat/css/style.css" %}">
+    <title>Admin-Recursos</title>
+</head>
+<body id="config">
+ 
+  <nav class="navbar">
+        <span class="open-slide">
+            <a href="#" onclick="openSlideMenu()">
+                <svg width="30" height="30">
+                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                </svg>
+            </a>
+        </span>
+        
+        <ul class="navbar-nav" >
+           
+            <li><a href="#"><span>&#xe986;</span></a></li>
+            <div class="dropdown">
+                 <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="login.html">Sair</a>
+                  </div>
+            </div>
+            <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
+        </ul>
+    </nav>
+    
+    <div id="side-menu" class="side-nav">
+      <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
+        <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
+        <a href="menu.html"><span>&#xe900;</span>MENU</a>
+        <a href="config.html"><span>&#xe994;</span>CONFIGURAÇÕES</a>
+        <a href="recursos.html" class="active"><span>&#xe9a8;</span>RECURSOS</a>
+        <a href="planos.html"><span>&#xe90e;</span>PLANOS</a>
+        <a href="itens.html"><span>&#xe923;</span>ITENS</a>
+        <a href="agenda.html"><span>&#xe900;</span>AGENDA</a>
+        <a href="clientes.html"><span>&#xe972;</span>CLIENTES</a>
+    </div>
+    <div id="main">
+       <div class="wrapper">
+            <h1 class="titulo">Painel Administrativo</h1>
+            
+           <div class="flex-grid">
+                <div class="col cadastro">
+                    <div class="table">
+                        <h2 class="subtitulo">Recursos Cadastrados</h2>
+                        <div class="flex-grid th-cadastro">
+                            <div class="cell top">Descrição</div>
+                            <div class="cell top">Valor</div>
+                            <div class="cell top">Editor</div>
+                        </div>
+
+                         <div class="row td-cadastro">
+                            <div class="cell">Projetor</div>
+                            <div class="cell">R$ 8,00</div>
+                            <div class="cell"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                        </div>
+
+                         <div class="row td-cadastro">
+                            <div class="cell">Estroboscópio</div>
+                            <div class="cell">R$ 12,00</div>
+                            <div class="cell"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                        </div>
+                        
+                        <div class="row td-cadastro">
+                            <div class="cell bottom">Projetor2</div>
+                            <div class="cell bottom">R$ 5,00</div>
+                            <div class="cell bottom"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                        </div>
+                        
+                    </div>
+    
+                    <form action="">
+                        <button class="btn-small btn-table">Adicionar Novo Equipamento</button>
+                    </form>
+                </div>
+                 
+                  <div class="col cadastro">
+                    <div class="table">
+                        <h2 class="subtitulo">Salas Cadastradas</h2>
+                        <div class="flex-grid th-cadastro">
+                            <div class="cell top">Descrição</div>
+                            <div class="cell top">Valor</div>
+                            <div class="cell top">Editor</div>
+                        </div>
+
+                         <div class="row td-cadastro">
+                            <div class="cell">Iracema</div>
+                            <div class="cell">Exclusivo</div>
+                            <div class="cell"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                        </div>
+
+                         <div class="row td-cadastro">
+                            <div class="cell">Canoa</div>
+                            <div class="cell">Exclusivo</div>
+                            <div class="cell"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                        </div>
+                        
+                        <div class="row td-cadastro">
+                            <div class="cell bottom">Sala de reunião 1</div>
+                            <div class="cell bottom">Compartilhado</div>
+                            <div class="cell bottom"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                        </div>
+                        
+                    </div>
+    
+                    <form action="">
+                        <button class="btn-small btn-table">Adicionar Nova Sala</button>
+                    </form>
+                </div>
+           </div>
+
+            
+            <form action="" class="form-2">
+              
+                <button class="btn-grande btn-cancelar">Cancelar</button>
+                <button class="btn-grande btn-salvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="{% static "admin_cohabitat/js/main.js" %}"></script>
+</body>
+</html>
