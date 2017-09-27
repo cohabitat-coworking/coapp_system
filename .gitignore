@@ -44,3 +44,4 @@ tests/report/
 env/sendgrid.env
 sendgrid.env
 >>>>>>> b7dbd304e55ba402e2a7130abf0e95403d58b581
+*.log

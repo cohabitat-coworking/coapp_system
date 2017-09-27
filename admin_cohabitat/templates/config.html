@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto+Slab:400,700" rel="stylesheet">
-     <link rel="stylesheet" href="{% static "admin_cohabitat/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "admin_cohabitat/css/style.css" %}">
     <title>Admin-Config</title>
 </head>
 <body id="config">
-  <nav class="navbar">
+<nav class="navbar">
         <span class="open-slide">
             <a href="#" onclick="openSlideMenu()">
                 <svg width="30" height="30">
@@ -17,78 +18,78 @@
                 </svg>
             </a>
         </span>
-        
-        <ul class="navbar-nav" >
-           
-            <li><a href="#"><span>&#xe986;</span></a></li>
-            <div class="dropdown">
-                 <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
-                  <div id="myDropdown" class="dropdown-content">
-                    <a href="login.html">Sair</a>
-                  </div>
+
+    <ul class="navbar-nav">
+
+        <li><a href="#"><span>&#xe986;</span></a></li>
+        <div class="dropdown">
+            <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="login.html">Sair</a>
             </div>
-            <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
-        </ul>
-    </nav>
-    
-     <div id="side-menu" class="side-nav">
-       <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
-        <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
-        <a href="menu.html"><span>&#xe900;</span>MENU</a>
-        <a href="config.html"  class="active"><span>&#xe994;</span>CONFIGURAÇÕES</a>
-        <a href="recursos.html"><span>&#xe9a8;</span>RECURSOS</a>
-        <a href="planos.html"><span>&#xe90e;</span>PLANOS</a>
-        <a href="itens.html"><span>&#xe923;</span>ITENS</a>
-        <a href="agenda.html"><span>&#xe900;</span>AGENDA</a>
-        <a href="clientes.html"><span>&#xe972;</span>CLIENTES</a>
-    </div>
-    <div id="main">
-       <div class="wrapper">
-            <h1 class="titulo">Painel Administrativo</h1>
-            <div class="flex-grid">
-                <form action="" class="form-1 col">
-                    <input type="text" placeholder="Nome">
-                    <input type="text" placeholder="Site">
-                </form> 
-                <div class="logotipo col">
-                    <h2 class="subtitulo">Logotipo</h2>
-                    <p>60x50</p>
-                    <form action="">
-                        <button class="btn-small btn-cancelar">Apagar</button>
-                        <button class="btn-small">Selecionar</button>
-                    </form>
-                </div>
-           </div>
-            
-                <div class="contato cadastro">
-                   <h2 class="subtitulo">Informações de Contato</h2>
-                    <div class="table">
-                       
-                        <div class="th-cadastro">
-                            <div class="cell top">Descrição</div>
-                            <div class="cell top">Telefone</div>
-                            <div class="cell top">E-mail</div>
-                            <div class="cell top">Editor</div>
-                        </div>
-
-                         <div class="row td-cadastro">
-                            <div class="cell bottom">Diretoria</div>
-                            <div class="cell bottom">99999-9999</div>
-                            <div class="cell bottom">diretoria@cohabitat.com.br</div>
-                            <div class="cell bottom"><span>&#xe905;</span><span>&#xe9ac;</span></div>
-                        </div>
-
-                    </div>
-                </div>
-
-            <form action="" class="form-2">
-              
-                <button class="btn-grande btn-cancelar">Cancelar</button>
-                <button class="btn-grande btn-salvar">Salvar</button>
-            </form>
         </div>
+        <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
+    </ul>
+</nav>
+
+<div id="side-menu" class="side-nav">
+    <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
+    <a href="menu.html"><span>&#xe900;</span>MENU</a>
+    <a href="config.html" class="active"><span>&#xe994;</span>CONFIGURAÇÕES</a>
+    <a href="recursos.html"><span>&#xe9a8;</span>RECURSOS</a>
+    <a href="planos.html"><span>&#xe90e;</span>PLANOS</a>
+    <a href="itens.html"><span>&#xe923;</span>ITENS</a>
+    <a href="agenda.html"><span>&#xe900;</span>AGENDA</a>
+    <a href="clientes.html"><span>&#xe972;</span>CLIENTES</a>
+</div>
+<div id="main">
+    <div class="wrapper">
+        <h1 class="titulo">Painel Administrativo</h1>
+        <div class="flex-grid">
+            <form action="" class="form-1 col">
+                <input type="text" placeholder="Nome">
+                <input type="text" placeholder="Site">
+            </form>
+            <div class="logotipo col">
+                <h2 class="subtitulo">Logotipo</h2>
+                <p>60x50</p>
+                <form action="">
+                    <button class="btn-small btn-cancelar">Apagar</button>
+                    <button class="btn-small">Selecionar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="contato cadastro">
+            <h2 class="subtitulo">Informações de Contato</h2>
+            <div class="table">
+
+                <div class="th-cadastro">
+                    <div class="cell top">Descrição</div>
+                    <div class="cell top">Telefone</div>
+                    <div class="cell top">E-mail</div>
+                    <div class="cell top">Editor</div>
+                </div>
+
+                <div class="row td-cadastro">
+                    <div class="cell bottom">Diretoria</div>
+                    <div class="cell bottom">99999-9999</div>
+                    <div class="cell bottom">diretoria@cohabitat.com.br</div>
+                    <div class="cell bottom"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                </div>
+
+            </div>
+        </div>
+
+        <form action="" class="form-2">
+
+            <button class="btn-grande btn-cancelar">Cancelar</button>
+            <button class="btn-grande btn-salvar">Salvar</button>
+        </form>
     </div>
-    
-    <script src="{% static "admin_cohabitat/js/main.js" %}"></script>
+</div>
+
+<script src="{% static "admin_cohabitat/js/main.js" %}"></script>
 </body>
 </html>
