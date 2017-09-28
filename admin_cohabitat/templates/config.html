@@ -86,8 +86,7 @@
                         </div>
                     </div>
                 {% endfor %}
-             <button class="btn-small btn-table" id="myBtn">Adicionar Contato</button>
-
+                <button class="btn-small btn-table" id="myBtn">Adicionar Contato</button>
 
 
             </div>
@@ -95,47 +94,43 @@
         </div>
 
 
-
     </div>
 </div>
- <div id="myModal" class="modal">
-     <!-- Modal content -->
-        <div class="modal-content">
-          <div class="modal-header">
-              <span class="close">&#xea0f;</span>
-              <h2 class="subtitulo">Adicionar Contato</h2>
-          </div>
-          <div class="modal-body wrapp">
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&#xea0f;</span>
+            <h2 class="subtitulo">Adicionar Contato</h2>
+        </div>
+        <div class="modal-body wrapp">
+            <form action="{{ coworking_info.id }}/contact" method="post" class="form">
+                {% csrf_token %}
 
-                  <div class="desc">
-                      <h3>Descrição:</h3>
-                      <form action="" class="form">
-                          <input type="text" placeholder="Itens">
-                      </form>
-                  </div>
-                  <div class="desc">
-                      <h3>Telefone:</h3>
-                      <form action="" class="form">
-                          <input type="text" placeholder="Telefone">
-                      </form>
-                  </div>
-                  <div class="desc">
-                      <h3>E-mail:</h3>
-                      <form action="" class="form">
-                          <input type="text" placeholder="E-mail">
-                      </form>
-                  </div>
+                <div class="desc">
+                    <h3>Nome:</h3>
+                    <input name="name" type="text" placeholder="Nome">
+                </div>
 
-                  <form action="" class="form-2">
-                    <button class="btn-grande btn-cancelar">Cancelar</button>
-                    <button class="btn-grande btn-salvar">Salvar</button>
-                 </form>
-          </div>
-              <div class="modal-footer">
-                  <h3> </h3>
-              </div>
+                <div class="desc">
+                    <h3>Telefone:</h3>
+                    <input name="phone" type="text" placeholder="Telefone">
+                </div>
+
+                <div class="desc">
+                    <h3>E-mail:</h3>
+                    <input name="email" type="text" placeholder="E-mail">
+                </div>
+
+                <button class="btn-grande btn-cancelar">Cancelar</button>
+                <button class="btn-grande btn-salvar">Salvar</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <h3></h3>
         </div>
     </div>
+</div>
 
 <script src="{% static "admin_cohabitat/js/main.js" %}"></script>
 </body>

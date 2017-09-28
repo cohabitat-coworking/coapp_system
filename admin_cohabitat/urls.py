@@ -10,6 +10,7 @@ urlpatterns = [
                   url(r'^login', auth_views.login, name='login'),
                   url(r'^logout', auth_views.logout, {'next_page': '/admin'}, name='logout'),
                   url(r'^home', views.home, name='home'),
+                  url(r'^config/(?P<coworking_id>[0-9]+)/contact', views.contact, name='config'),
                   url(r'^config/(?P<coworking_id>[0-9]+)', views.config, name='config'),
                   url(r'^recursos', views.resources, name='resources'),
                   url(r'^planos', views.plans, name='plans'),
