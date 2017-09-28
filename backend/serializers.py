@@ -85,29 +85,24 @@ class JuridicProfileCreationSerializer(serializers.ModelSerializer):
         fields = ('user', 'cnpj', 'address')
 
 
-class ContactTypeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ContactType
-        fields = ('id', 'type')
-
 
 class ContactInfoCreationSerializer(serializers.ModelSerializer):
-    type = serializers.PrimaryKeyRelatedField(queryset=ContactType.objects.all())
+    # type = serializers.PrimaryKeyRelatedField(queryset=ContactType.objects.all())
 
     # coworking = serializers.PrimaryKeyRelatedField(queryset=Coworking.objects.all())
 
     class Meta:
         model = ContactInfo
-        fields = ('id', 'name', 'info', 'type')
+        fields = ('id', 'name', 'email', 'phone')
         depth = 2
 
 
 class ContactInfoSerializer(serializers.ModelSerializer):
-    type = serializers.CharField(source="type.type")
+    # type = serializers.CharField(source="type.type")
 
     class Meta:
         model = ContactInfo
-        fields = ('id', 'name', 'info', 'type')
+        fields = ('id', 'name', 'email', 'phone')
         depth = 2
 
 

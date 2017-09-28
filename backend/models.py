@@ -86,11 +86,11 @@ class ContactInfo(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     coworking = models.ForeignKey(Coworking, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, verbose_name="Nome")
-    info = models.CharField(max_length=300)
-    type = models.ForeignKey(ContactType, verbose_name="Tipo")
+    email = models.CharField(max_length=300)
+    phone = models.CharField(max_length=11)
 
     def __unicode__(self):
-        return u'%s' % (self.type.type + ": " + self.name + " - " + self.info)
+        return u'%s' % (self.name + " - " + self.email + "-" + self.phone)
 
     class Meta:
         verbose_name_plural = "Informações de Contato"

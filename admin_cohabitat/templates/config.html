@@ -23,7 +23,8 @@
 
         <li><a href="#"><span>&#xe986;</span></a></li>
         <div class="dropdown">
-            <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
+            <li><a href="#" onclick="myFunction()"
+                   class="dropbtn">{{ request.user.first_name }}<span>&#xf107;</span></a></li>
             <div id="myDropdown" class="dropdown-content">
                 <a href="login.html">Sair</a>
             </div>
@@ -48,12 +49,14 @@
         <h1 class="titulo">Painel Administrativo</h1>
         <div class="flex-grid">
             <form action="" class="form-1 col">
-                <input type="text" placeholder="Nome">
-                <input type="text" placeholder="Site">
+                <input type="text" placeholder="Nome" value="{{ coworking_info.name }}">
+                <input type="text" placeholder="Site" value="{{ coworking_info.url }}">
             </form>
             <div class="logotipo col">
                 <h2 class="subtitulo">Logotipo</h2>
-                <p>60x50</p>
+                <p>
+                    <img src="{{ MEDIA_URL }}{{ coworking_info.logo }}" alt="Smiley face" height="50" width="50">
+                </p>
                 <form action="">
                     <button class="btn-small btn-cancelar">Apagar</button>
                     <button class="btn-small">Selecionar</button>
@@ -71,6 +74,7 @@
                     <div class="cell top">E-mail</div>
                     <div class="cell top">Editor</div>
                 </div>
+<<<<<<< HEAD
 
                 <div class="row td-cadastro">
                     <div class="cell bottom">Diretoria</div>
@@ -82,6 +86,20 @@
                      </div>
                 </div>
                  <button class="btn-small btn-table" id="myBtn">Adicionar Contato</button>
+=======
+                {% for contact in contact_infos %}
+                    <div class="row td-cadastro">
+                        <div class="cell bottom">{{ contact.name }}</div>
+                        <div class="cell bottom">{{ contact.phone }}</div>
+                        <div class="cell bottom">{{ contact.email }}</div>
+                        <div class="cell bottom">
+                            <span>&#xe905;</span>
+                            <span>&#xe9ac;</span>
+                        </div>
+                    </div>
+                {% endfor %}
+
+>>>>>>> 7a1eb1788b36c78e8c90a3b6aefcf73449126d1f
             </div>
 
         </div>

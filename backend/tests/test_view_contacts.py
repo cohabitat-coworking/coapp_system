@@ -16,12 +16,10 @@ class GetAllContactsTest(APITestCase):
 
         address = GenericAddress.objects.create(description="A fake address")
         self.coworking = Coworking.objects.create(name="Test coworking", address=address, cnpj="123456789012")
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        ContactType.objects.create(coworking=self.coworking, type="type_test2")
 
-        ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest", type=contact_type)
-        ContactInfo.objects.create(coworking=self.coworking, name="Another contact info", info="test2test2",
-                                   type=contact_type)
+        ContactInfo.objects.create(coworking=self.coworking, name="A contact info", email="testtest", phone="testphone")
+        ContactInfo.objects.create(coworking=self.coworking, name="Another contact info", email="test2test2",
+                                   phone="phone2test")
 
     def test_get_all_contacts(self):
         self.client.force_login(user=self.user)
@@ -36,18 +34,6 @@ class GetAllContactsTest(APITestCase):
         self.assertEqual(serialized_contact_infos, response.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_get_contact_types(self):
-        self.client.force_login(user=self.user)
-
-        response = self.client.get('/api/v1/coworkings/{}/contact_types'.format(self.coworking.id),
-                                   HTTP_AUTHORIZATION=self.token)
-
-        contact_types = ContactType.objects.filter(coworking=self.coworking)
-
-        serialized_contact_types = {"contact_types": ContactTypeSerializer(contact_types, many=True).data}
-
-        self.assertEqual(serialized_contact_types, response.data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_all_contacts_info_not_found_coworking(self):
         self.client.force_login(user=self.user)
@@ -71,9 +57,9 @@ class CreateContactInfoTest(APITestCase):
     def test_create_contact_info(self):
         self.client.force_login(user=self.user)
 
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest",
-                                                  type=contact_type)
+        # contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
+        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", email="testtest",
+                                                  phone="phonetest")
 
         serialized_contact = {"contact_info": ContactInfoCreationSerializer(contact_info).data}
 
@@ -90,9 +76,9 @@ class CreateContactInfoTest(APITestCase):
     def test_create_contact_info_bad_request_serializer(self):
         self.client.force_login(user=self.user)
 
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest",
-                                                  type=contact_type)
+        # contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
+        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", email="testtest",
+                                                  phone="phonetest")
 
         serialized_contact = {"contact_info": ContactInfoSerializer(contact_info).data}
 
@@ -105,9 +91,9 @@ class CreateContactInfoTest(APITestCase):
     def test_create_contact_info_bad_request_structure(self):
         self.client.force_login(user=self.user)
 
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest",
-                                                  type=contact_type)
+        # contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
+        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", email="testtest",
+                                                  phone="phonetest")
 
         contact_info_json = {"coworking": CoworkingSerializer(self.coworking).data, "nome": "A Name"}
         serialized_contact = {"cotact_info": contact_info_json}
@@ -121,9 +107,9 @@ class CreateContactInfoTest(APITestCase):
     def test_create_contact_info_not_found_coworking(self):
         self.client.force_login(user=self.user)
 
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest",
-                                                  type=contact_type)
+        # contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
+        contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", email="testtest",
+                                                  phone="phonetest")
 
         serialized_contact = {"contact_info": ContactInfoCreationSerializer(contact_info).data}
 
@@ -142,11 +128,12 @@ class GetSingleContactTest(APITestCase):
 
         address = GenericAddress.objects.create(description="A fake address")
         self.coworking = Coworking.objects.create(name="Test coworking", address=address, cnpj="123456789012")
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        ContactType.objects.create(coworking=self.coworking, type="type_test2")
+        # contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
+        # ContactType.objects.create(coworking=self.coworking, type="type_test2")
 
-        self.contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest",
-                                                       type=contact_type)
+        self.contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info",
+                                                       email="testtest",
+                                                       phone="testphone")
 
     def test_get_single_contact_info(self):
         self.client.force_login(user=self.user)
@@ -188,11 +175,12 @@ class DeleteContactTest(APITestCase):
 
         address = GenericAddress.objects.create(description="A fake address")
         self.coworking = Coworking.objects.create(name="Test coworking", address=address, cnpj="123456789012")
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        ContactType.objects.create(coworking=self.coworking, type="type_test2")
+        # contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
+        # ContactType.objects.create(coworking=self.coworking, type="type_test2")
 
-        self.contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest",
-                                                       type=contact_type)
+        self.contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info",
+                                                       email="testtest",
+                                                       phone="testphone")
 
     def test_delete_single_contact_info(self):
         self.client.force_login(user=self.user)
@@ -229,11 +217,11 @@ class UpdateContactTest(APITestCase):
 
         address = GenericAddress.objects.create(description="A fake address")
         self.coworking = Coworking.objects.create(name="Test coworking", address=address, cnpj="123456789012")
-        contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
-        ContactType.objects.create(coworking=self.coworking, type="type_test2")
+        # contact_type = ContactType.objects.create(coworking=self.coworking, type="type_test")
+        # ContactType.objects.create(coworking=self.coworking, type="type_test2")
 
-        self.contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", info="testtest",
-                                                       type=contact_type)
+        self.contact_info = ContactInfo.objects.create(coworking=self.coworking, name="A contact info", email="testtest",
+                                                       phone='testphone')
 
     def test_patch_contact_info(self):
         self.client.force_login(user=self.user)
