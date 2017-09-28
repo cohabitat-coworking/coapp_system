@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto+Slab:400,700" rel="stylesheet">
      <link rel="stylesheet" href="{% static "admin_cohabitat/css/style.css" %}">
@@ -34,7 +34,7 @@
     </nav>
     
      <div id="side-menu" class="side-nav">
-       <img src="img/logo-login.png" alt="Logo Coworking" class="logo-menu">
+      <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
         <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
         <a href="menu.html"><span>&#xe900;</span>MENU</a>
         <a href="config.html"><span>&#xe994;</span>CONFIGURAÇÕES</a>
@@ -75,11 +75,9 @@
                             <a href=""><span>&#xe9ac;</span></a>
                         </div>
                     </div>
+                     <button class="btn-small btn-table" id="myBtn">Adicionar Novo Item</button>
                 </div>
-                
-                <form action="">
-                    <button class="btn-small btn-table">Adicionar Novo Item</button>
-                </form>
+
            </div>
                 
             <div class="contato cadastro planos">
@@ -109,23 +107,49 @@
                             <a href=""><span>&#xe9ac;</span></a>
                         </div>
                     </div>
-                    
+                     <button class="btn-small btn-table" id="myBtn">Adicionar Novo Item</button>
                 </div>
-                <form action="">
-                    <button class="btn-small btn-table">Adicionar Novo Item</button>
-                </form>
+
 
            </div>
-                
-                
-            <form action="" class="form-2">
-              
-                <button class="btn-grande btn-cancelar">Cancelar</button>
-                <button class="btn-grande btn-salvar">Salvar</button>
-            </form>
         </div>
     </div>
-    
+
+  <!-- The Modal_1 -->
+
+    <div id="myModal" class="modal">
+     <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+              <span class="close">&#xea0f;</span>
+              <h2 class="subtitulo">Novo Item Consumível</h2>
+          </div>
+          <div class="modal-body wrapp">
+
+                  <div class="desc">
+                      <h3>Descrição:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Itens">
+                      </form>
+                  </div>
+                  <div class="desc">
+                      <h3>Valor:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Valor">
+                      </form>
+                  </div>
+
+                  <form action="" class="form-2">
+                    <button class="btn-grande btn-cancelar">Cancelar</button>
+                    <button class="btn-grande btn-salvar">Salvar</button>
+                 </form>
+          </div>
+              <div class="modal-footer">
+                  <h3> </h3>
+              </div>
+        </div>
+    </div>
+
     <script src="{% static "admin_cohabitat/js/main.js" %}"></script>
 </body>
 </html>

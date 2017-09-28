@@ -76,19 +76,58 @@
                     <div class="cell bottom">Diretoria</div>
                     <div class="cell bottom">99999-9999</div>
                     <div class="cell bottom">diretoria@cohabitat.com.br</div>
-                    <div class="cell bottom"><span>&#xe905;</span><span>&#xe9ac;</span></div>
+                     <div class="cell bottom">
+                                <a href=""><span>&#xe905;</span></a>
+                                <a href=""><span>&#xe9ac;</span></a>
+                     </div>
                 </div>
-
+                 <button class="btn-small btn-table" id="myBtn">Adicionar Contato</button>
             </div>
+
         </div>
 
-        <form action="" class="form-2">
 
-            <button class="btn-grande btn-cancelar">Cancelar</button>
-            <button class="btn-grande btn-salvar">Salvar</button>
-        </form>
+
     </div>
 </div>
+ <div id="myModal" class="modal">
+     <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+              <span class="close">&#xea0f;</span>
+              <h2 class="subtitulo">Adicionar Contato</h2>
+          </div>
+          <div class="modal-body wrapp">
+
+                  <div class="desc">
+                      <h3>Descrição:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Itens">
+                      </form>
+                  </div>
+                  <div class="desc">
+                      <h3>Telefone:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Telefone">
+                      </form>
+                  </div>
+                  <div class="desc">
+                      <h3>E-mail:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="E-mail">
+                      </form>
+                  </div>
+
+                  <form action="" class="form-2">
+                    <button class="btn-grande btn-cancelar">Cancelar</button>
+                    <button class="btn-grande btn-salvar">Salvar</button>
+                 </form>
+          </div>
+              <div class="modal-footer">
+                  <h3> </h3>
+              </div>
+        </div>
+    </div>
 
 <script src="{% static "admin_cohabitat/js/main.js" %}"></script>
 </body>
