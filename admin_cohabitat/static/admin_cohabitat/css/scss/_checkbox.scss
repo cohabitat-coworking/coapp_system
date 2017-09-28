@@ -2,7 +2,7 @@
     
     label {
         display: inline-block; // to make it easier to click
-        color: #fff;
+        color: $cinza-escuro;
         cursor: pointer;
         position: relative; // important
 
@@ -15,7 +15,7 @@
           width: 25px;
           height: 25px;
           transform-origin: center;
-          border: 4px solid #fff;
+          border: 4px solid $cinza-escuro;
 
           vertical-align: -6px;
           margin-right: 10px;
@@ -28,7 +28,7 @@
           width: 0px;
           height: 2px;
           border-radius: 2px; // so that the tick has nice rounded look
-          background: #fff;
+          background: $verde-escuro;
           position: absolute;
           transform: rotate(45deg);
           top: 10px; // you'll need to experiment with placement depending on the dimensions you've chosen
@@ -42,7 +42,7 @@
           width: 0;
           height: 2px;
           border-radius: 2px; // so that the tick has nice rounded look
-          background: #fff;
+          background: $verde-escuro;
           position: absolute;
           transform: rotate(305deg);
           top: 13px; // you'll need to experiment with placement depending on the dimensions you've chosen

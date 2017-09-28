@@ -72,4 +72,9 @@
     }
     
 }
+.teste .cell a span{
+    @include device(large){
+        margin: 0 1px;
+    }
 
+}

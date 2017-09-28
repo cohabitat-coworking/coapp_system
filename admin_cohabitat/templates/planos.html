@@ -8,7 +8,7 @@
     <title>Admin-Planos</title>
 </head>
 <body id="config">
- 
+
   <nav class="navbar">
         <span class="open-slide">
             <a href="#" onclick="openSlideMenu()">
@@ -19,9 +19,9 @@
                 </svg>
             </a>
         </span>
-        
+
         <ul class="navbar-nav" >
-           
+
             <li><a href="#"><span>&#xe986;</span></a></li>
             <div class="dropdown">
                  <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
@@ -29,12 +29,12 @@
                     <a href="login.html">Sair</a>
                   </div>
             </div>
-             <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
+            <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
         </ul>
     </nav>
-    
+
      <div id="side-menu" class="side-nav">
-       <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
+        <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
         <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
         <a href="menu.html"><span>&#xe900;</span>MENU</a>
         <a href="config.html"><span>&#xe994;</span>CONFIGURAÇÕES</a>
@@ -47,8 +47,8 @@
     <div id="main">
        <div class="wrapper">
             <h1 class="titulo">Painel Administrativo</h1>
-            
-              
+
+
             <div class="contato cadastro planos">
                <h2 class="subtitulo">Planos Fornecidos</h2>
                 <div class="table">
@@ -58,7 +58,7 @@
                         <div class="cell top">Valor</div>
                         <div class="cell top">Editor</div>
                     </div>
-                    
+
                     <div class="row td-cadastro">
                         <div class="cell">Virtual</div>
                         <div class="cell">R$ 150,00</div>
@@ -68,7 +68,7 @@
                             <a href=""><span>&#xe9ac;</span></a>
                         </div>
                     </div>
-                    
+
                     <div class="row td-cadastro">
                         <div class="cell">Compartilhado</div>
                         <div class="cell">R$ 160,00</div>
@@ -78,7 +78,7 @@
                             <a href=""><span>&#xe9ac;</span></a>
                         </div>
                     </div>
-                    
+
                      <div class="row td-cadastro">
                         <div class="cell bottom">Privado</div>
                         <div class="cell bottom">R$ 1500,00</div>
@@ -90,23 +90,19 @@
                     </div>
                 </div>
                  <!-- Trigger/Open The Modal -->
-                 
+
                 <form action="" class="form">
-                    
+
                 </form>
                 <button class="btn-small btn-table" id="myBtn">Montar Plano</button>
             </div>
 
-            <form action="" class="form-2">
-              
-                <button class="btn-grande btn-cancelar">Cancelar</button>
-                <button class="btn-grande btn-salvar">Salvar</button>
-            </form>
+
         </div>
     </div>
 
 <!-- The Modal -->
-   
+
     <div id="myModal" class="modal">
      <!-- Modal content -->
         <div class="modal-content">
@@ -115,37 +111,63 @@
               <h2 class="subtitulo">Montar Plano</h2>
           </div>
           <div class="modal-body wrapp">
-             
+
                   <div class="desc">
                       <h3>Descrição:</h3>
                       <form action="" class="form">
-                          <input type="text" placeholder="Privado">
+                          <input type="text" placeholder="Planos">
                       </form>
                   </div>
 
                   <div class="box-item">
                       <h3 class="subtitulo">Consumíveis</h3>
                        <!-- Checkbox -->
-                    <div class="exp">
-                       <div class="checkbox">
-                        <form>
-                          <div>
-                            <input type="checkbox" id="check" name="check" value="" >
-                            <label for="check">
-                              <span><!-- This span is needed to create the "checkbox" element --></span>Checkbox
-                            </label>
-                          </div>
-                        </form>
-                    </div>     
-                  </div>
-              </div>
+                        <div class="exp">
+                           <div class="checkbox">
+                            <form>
+                              <div>
+                                <input type="checkbox" id="check1" name="check1" value="" >
+                                <label for="check1">
+                                    <span></span><p>Café</p>
+                                </label>
+                              </div>
+                            </form>
+                            </div>
+                        </div>
+
+                        <div class="exp">
+                           <div class="checkbox">
+                            <form>
+                              <div>
+                                <input type="checkbox" id="check2" name="check2" value="" >
+                                <label for="check2">
+                                    <span></span><p>Café</p>
+                                </label>
+                              </div>
+                            </form>
+                            </div>
+                        </div>
+
+                        <div class="exp">
+                           <div class="checkbox">
+                            <form>
+                              <div>
+                                <input type="checkbox" id="check3" name="check3" value="" >
+                                <label for="check3">
+                                    <span></span><p>Café</p>
+                                </label>
+                              </div>
+                            </form>
+                            </div>
+                        </div>
+                </div>
           </div>
               <div class="modal-footer">
                   <h3>Modal Footer</h3>
               </div>
         </div>
     </div>
-   
-<script src="{% static "admin_cohabitat/js/main.js" %}"></script>
+
+    <script src="{% static "admin_cohabitat/js/main.js" %}"></script>
 </body>
 </html>
