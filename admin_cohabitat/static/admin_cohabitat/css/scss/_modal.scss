@@ -60,7 +60,7 @@
 
 .modal-header {
    
-    margin: 5px;
+    margin: 10px;
     background: rgba(255,255,255,.5);
     color: white;
     border-radius: 10px;
@@ -71,7 +71,7 @@
         }
         padding:16px;
     }
-    
+
 }
 
 .modal-body {padding: 2px 16px;}
@@ -80,4 +80,56 @@
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+}
+/*--------------------------Modal Description ----------------------------------------------*/
+
+.desc{
+    h3{
+        font-family: $fonte-1;
+        text-transform: uppercase;
+        font-size: 24px;
+        color: $branco;
+        font-weight: 700;
+    }
+    input{
+        display: inline-block;
+        border-color: $cinza-escuro;
+    }
+    ::-webkit-input-placeholder { /* Chrome */
+          color: $cinza-escuro;
+          opacity: 0.7;
+        }
+      ::-ms-input-placeholder { /* IE 10+ */
+          color: $cinza-escuro;
+          opacity: 0.7;
+        }
+      ::-moz-placeholder { /* Firefox 19+ */
+          color: $cinza-escuro;
+          opacity: 0.7;
+        }
+       ::-moz-placeholder { /* Firefox 4 - 18 */
+          color: $cinza-escuro;
+          opacity: 0.7;
+        }
+}
+
+
+
+/*--------------------------Modal Box-item ----------------------------------------------*/
+
+.box-item{
+    background: $creme;
+    border-radius: 10px;
+    padding: 10px 0 30px 0;
+    label{
+
+        margin-left: 15px;
+        p{
+            display: inline-block;
+            margin: auto 10px;
+            font-family: $fonte-2;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
 }
