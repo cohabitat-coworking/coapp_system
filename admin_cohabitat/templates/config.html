@@ -23,7 +23,8 @@
 
         <li><a href="#"><span>&#xe986;</span></a></li>
         <div class="dropdown">
-            <li><a href="#" onclick="myFunction()" class="dropbtn">Batman<span>&#xf107;</span></a></li>
+            <li><a href="#" onclick="myFunction()"
+                   class="dropbtn">{{ request.user.first_name }}<span>&#xf107;</span></a></li>
             <div id="myDropdown" class="dropdown-content">
                 <a href="login.html">Sair</a>
             </div>
@@ -53,7 +54,9 @@
             </form>
             <div class="logotipo col">
                 <h2 class="subtitulo">Logotipo</h2>
-                <img src="{{ MEDIA_URL }}{{ coworking_info.logo }}" alt="Smiley face" height="60" width="50">
+                <p>
+                    <img src="{{ MEDIA_URL }}{{ coworking_info.logo }}" alt="Smiley face" height="50" width="50">
+                </p>
                 <form action="">
                     <button class="btn-small btn-cancelar">Apagar</button>
                     <button class="btn-small">Selecionar</button>
