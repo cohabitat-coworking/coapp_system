@@ -71,13 +71,17 @@
                     <div class="cell top">E-mail</div>
                     <div class="cell top">Editor</div>
                 </div>
-
-                <div class="row td-cadastro">
-                    <div class="cell bottom">Diretoria</div>
-                    <div class="cell bottom">99999-9999</div>
-                    <div class="cell bottom">diretoria@cohabitat.com.br</div>
-                    <div class="cell bottom"><span>&#xe905;</span><span>&#xe9ac;</span></div>
-                </div>
+                {% for contact in contact_infos %}
+                    <div class="row td-cadastro">
+                        <div class="cell bottom">{{ contact.name }}</div>
+                        <div class="cell bottom">{{ contact.phone }}</div>
+                        <div class="cell bottom">{{ contact.email }}</div>
+                        <div class="cell bottom">
+                            <span>&#xe905;</span>
+                            <span>&#xe9ac;</span>
+                        </div>
+                    </div>
+                {% endfor %}
 
             </div>
         </div>
