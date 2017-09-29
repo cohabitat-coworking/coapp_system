@@ -1,190 +1,121 @@
-<python_http_client.client.Response object at 0x7f8381680a50>
-Internal Server Error: /send_email
-Traceback (most recent call last):
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
-    response = get_response(request)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lds/ldsprojs/coapp_system/frontend_cohabitat/views/index.py", line 43, in send_email
-    response = sg.client.mail.send.post(request_body=mail.get())
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/python_http_client/client.py", line 227, in http_request
-    return Response(self._make_request(opener, request))
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/python_http_client/client.py", line 161, in _make_request
-    raise exc
-UnauthorizedError
-202
-
-Server: nginx
-Date: Tue, 26 Sep 2017 12:46:53 GMT
-Content-Type: text/plain; charset=utf-8
-Content-Length: 0
-Connection: close
-X-Message-Id: I0AFxBeVR4SVBfuh3Cf8NQ
-Access-Control-Allow-Origin: https://sendgrid.api-docs.io
-Access-Control-Allow-Methods: POST
-Access-Control-Allow-Headers: Authorization, Content-Type, On-behalf-of, x-sg-elas-acl
-Access-Control-Max-Age: 600
-X-No-CORS-Reason: https://sendgrid.com/docs/Classroom/Basics/API/cors.html
-
-Not Found: /favicon.ico
-Not Found: /enviar.php
-Not Found: /favicon.ico
 Not Found: /admin/config.html
-Not Found: /admin/clientes.html
-Internal Server Error: /admin/config.html
+Not Found: /admin/config/1
+Not Found: /admin/config/{% static https://code.jquery.com/jquery-2.2.4.min.js
+Not Found: /admin/config/{% static https://code.jquery.com/jquery-2.2.4.min.js
+Not Found: /admin/config/{% static https://code.jquery.com/jquery-2.2.4.min.js
+Not Found: /admin/config/{% static https://code.jquery.com/jquery-2.2.4.min.js
+Not Found: /admin/config.html
+Not Found: /admin/config/{% static https://code.jquery.com/jquery-2.2.4.min.js
+Internal Server Error: /admin/home
 Traceback (most recent call last):
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
     response = get_response(request)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
     response = self.process_exception_by_middleware(e, request)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lds/ldsprojs/coapp_system/admin_cohabitat/views/config.py", line 8, in config
-    'config.html',
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/loader.py", line 67, in render_to_string
-    template = get_template(template_name, using=using)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/loader.py", line 21, in get_template
-    return engine.get_template(template_name)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/backends/django.py", line 39, in get_template
-    return Template(self.engine.get_template(template_name), self)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/engine.py", line 160, in get_template
-    template, origin = self.find_template(template_name)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/engine.py", line 134, in find_template
-    name, template_dirs=dirs, skip=skip,
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/loaders/base.py", line 44, in get_template
-    contents, origin, origin.template_name, self.engine,
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/base.py", line 191, in __init__
-    self.nodelist = self.compile_nodelist()
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/base.py", line 233, in compile_nodelist
-    return parser.parse()
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/base.py", line 512, in parse
-    self.invalid_block_tag(token, command, parse_until)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/base.py", line 574, in invalid_block_tag
-    "or load this tag?" % (token.lineno, command)
-TemplateSyntaxError: Invalid block tag on line 6: 'static'. Did you forget to register or load this tag?
-Not Found: /admin/menu.html
-Not Found: /admin/agenda.html
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-<<<<<<< HEAD
->>>>>>> 41f274e61cbba0ac4717e4ad5ddfb15af3bf8991
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-=======
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-Not Found: /favicon.ico
-Not Found: /admin/img/logo-login.png
-Not Found: /favicon.ico
-Not Found: /django-admin
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-Not Found: /admin/img/logo-login.png
-STREAM 'IHDR' 16 13
-STREAM 'sBIT' 41 3
-'sBIT' 41 3 (unknown)
-STREAM 'IDAT' 56 8192
-Not Found: /admin/img/logo-login.png
-Internal Server Error: /admin/config.html
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/coapp_system/admin_cohabitat/views/home.py", line 9, in home
+    profile = Profile.objects.get(user=request.user.id)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /admin/home
 Traceback (most recent call last):
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
     response = get_response(request)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
     response = self.process_exception_by_middleware(e, request)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lds/ldsprojs/coapp_system/admin_cohabitat/views/config.py", line 15, in config
-    'config.html', data
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/loader.py", line 67, in render_to_string
-    template = get_template(template_name, using=using)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/loader.py", line 21, in get_template
-    return engine.get_template(template_name)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/backends/django.py", line 39, in get_template
-    return Template(self.engine.get_template(template_name), self)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/engine.py", line 160, in get_template
-    template, origin = self.find_template(template_name)
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/engine.py", line 134, in find_template
-    name, template_dirs=dirs, skip=skip,
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/loaders/base.py", line 44, in get_template
-    contents, origin, origin.template_name, self.engine,
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/base.py", line 191, in __init__
-    self.nodelist = self.compile_nodelist()
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/base.py", line 233, in compile_nodelist
-    return parser.parse()
-  File "/home/lds/ldsprojs/env/local/lib/python2.7/site-packages/django/template/base.py", line 489, in parse
-    raise self.error(token, e)
-TemplateSyntaxError: Could not parse the remainder: '['coworking_info'].name' from 'data['coworking_info'].name'
-Not Found: /home/lds/ldsprojs/coapp_system/coapp_system/static/media/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/staticimages/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /api/v1/coworkings/2
-Not Found: /api/v1/coworkings/3
-Not Found: /api/v1/coworkings/2
-Not Found: /api/v1/coworkings/3
-Not Found: /api/v1/coworkings/2/contact_infos
-Not Found: /api/v1/coworkings/30/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/8
-Not Found: /api/v1/coworkings/2
-Not Found: /api/v1/coworkings/3
-Not Found: /api/v1/coworkings/2/contact_infos
-Not Found: /api/v1/coworkings/24/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/8
-Not Found: /api/v1/coworkings/30/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/11
-Not Found: /api/v1/coworkings/2/contact_infos/16
-Not Found: /api/v1/coworkings/37/contact_infos/2
-Not Found: /api/v1/coworkings/2
-Not Found: /api/v1/coworkings/3
-Not Found: /api/v1/coworkings/2/contact_infos
-Not Found: /api/v1/coworkings/24/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/8
-Not Found: /api/v1/coworkings/29/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/11
-Not Found: /api/v1/coworkings/2/contact_infos/16
-Not Found: /api/v1/coworkings/36/contact_infos/2
-Not Found: /api/v1/coworkings/2
-Not Found: /api/v1/coworkings/3
-Not Found: /api/v1/coworkings/2/contact_infos
-Not Found: /api/v1/coworkings/24/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/8
-Not Found: /api/v1/coworkings/2/contact_infos
-Not Found: /api/v1/coworkings/29/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/15
-Not Found: /api/v1/coworkings/2/contact_infos/20
-Not Found: /api/v1/coworkings/36/contact_infos/2
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /api/v1/coworkings/2
-Not Found: /api/v1/coworkings/3
-Not Found: /api/v1/coworkings/2/contact_infos
-Not Found: /api/v1/coworkings/24/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/8
-Not Found: /api/v1/coworkings/2/contact_infos
-Not Found: /api/v1/coworkings/29/contact_infos/2
-Not Found: /api/v1/coworkings/2/contact_infos/15
-Not Found: /api/v1/coworkings/2/contact_infos/20
-Not Found: /api/v1/coworkings/36/contact_infos/2
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
-Not Found: /admin/images/logos/Screenshot_20170912-092854.png
->>>>>>> 7a1eb1788b36c78e8c90a3b6aefcf73449126d1f
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/coapp_system/admin_cohabitat/views/home.py", line 9, in home
+    profile = Profile.objects.get(user=request.user.id)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /admin/home
+Traceback (most recent call last):
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/coapp_system/admin_cohabitat/views/home.py", line 9, in home
+    profile = Profile.objects.get(user=request.user.id)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /admin/home
+Traceback (most recent call last):
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/coapp_system/admin_cohabitat/views/home.py", line 9, in home
+    profile = Profile.objects.get(user=request.user.id)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /admin/home
+Traceback (most recent call last):
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/coapp_system/admin_cohabitat/views/home.py", line 9, in home
+    profile = Profile.objects.get(user=request.user.id)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: Profile matching query does not exist.
+Not Found: /admin/config.html
+Not Found: /admin/config/itens.html
+Internal Server Error: /admin/home
+Traceback (most recent call last):
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/coapp_system/admin_cohabitat/views/home.py", line 9, in home
+    profile = Profile.objects.get(user=request.user.id)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/mnt/c/Users/humbe/Desktop/LDSProjs/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+DoesNotExist: Profile matching query does not exist.
+Not Found: /admin/config/recursos.html
+Not Found: /admin/config/planos.html
+Not Found: /admin/config/menu.html
+Not Found: /admin/config/recursos.html
+Not Found: /admin/config/recursos.html
+Not Found: /admin/config.html
+Not Found: /admin/config.html
+Not Found: /admin/config.html
+Not Found: /admin/config/config.html

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,13 +25,15 @@
         <li><a href="#"><span>&#xe986;</span></a></li>
 
         <div class="dropdown">
-            <li><a href="#" onclick="myFunction()" class="dropbtn">{{ request.user.first_name  }}<span>&#xf107;</span></a></li>
+            <li><a href="#" onclick="myFunction()"
+                   class="dropbtn">{{ request.user.first_name }}<span>&#xf107;</span></a></li>
             <div id="myDropdown" class="dropdown-content">
                 {% url 'logout'  as the_url %}
                 <a href="{{ the_url }}">Sair</a>
             </div>
         </div>
-        <li><a href="#"><img src="{% static "admin_cohabitat/img/batman.png" %}" alt="Foto do Perfil"></a></li>
+        <li><a href="#"><img src="{{ MEDIA_URL }}{{ profile.profile_image }}" alt="Foto do Perfil" height="50"
+                             width="50"></a></li>
     </ul>
 </nav>
 
@@ -40,7 +41,7 @@
     <img src="{% static "admin_cohabitat/img/logo-login.png" %}" alt="Logo Coworking" class="logo-menu">
     <a href="#" class="btn-close" onclick="closeSlideMenu()"><span>&#xea0f;</span></a>
     <a href="menu.html" class="active"><span>&#xe900;</span>MENU</a>
-    <a href="config.html"><span>&#xe994;</span>CONFIGURAÇÕES</a>
+    <a href="config/{{ profile.coworking_id }}"><span>&#xe994;</span>CONFIGURAÇÕES</a>
     <a href="recursos.html"><span>&#xe9a8;</span>RECURSOS</a>
     <a href="planos.html"><span>&#xe90e;</span>PLANOS</a>
     <a href="itens.html"><span>&#xe923;</span>ITENS</a>
@@ -52,7 +53,7 @@
         <h1 class="titulo">Painel Administrativo</h1>
 
         <div class="mensagem">
-                <p>Seja bem-vindo Sr(a)<span class="username">{{ request.user.first_name  }}</span></p>
+            <p>Seja bem-vindo Sr(a)<span class="username">{{ request.user.first_name }}</span></p>
         </div>
 
     </div>

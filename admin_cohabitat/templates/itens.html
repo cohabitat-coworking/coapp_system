@@ -47,7 +47,8 @@
     <div id="main">
        <div class="wrapper">
             <h1 class="titulo">Painel Administrativo</h1>
-            
+
+           <!-- Item Consumível -->
             <div class="contato cadastro planos">
                <h2 class="subtitulo">Consumíveis</h2>
                 <div class="table">
@@ -62,8 +63,8 @@
                         <div class="cell">Café(500 ml)</div>
                         <div class="cell">R$ 5,00/ unidade</div>
                         <div class="cell">
-                            <a href=""><span>&#xe905;</span></a>
-                            <a href=""><span>&#xe9ac;</span></a>
+                            <a href="#" class="myBtn_multi"><span>&#xe905;</span></a>
+                            <a href="#" class="myBtn_multi"><span>&#xe9ac;</span></a>
                         </div>
                     </div>
                     
@@ -75,11 +76,12 @@
                             <a href=""><span>&#xe9ac;</span></a>
                         </div>
                     </div>
-                     <button class="btn-small btn-table" id="myBtn">Adicionar Novo Item</button>
+                     <button class="btn-small btn-table myBtn_multi">Adicionar Novo Item</button>
                 </div>
 
            </div>
-                
+
+           <!-- Serviços -->
             <div class="contato cadastro planos">
                <h2 class="subtitulo">Serviços</h2>
                 <div class="table">
@@ -107,7 +109,7 @@
                             <a href=""><span>&#xe9ac;</span></a>
                         </div>
                     </div>
-                     <button class="btn-small btn-table" id="myBtn">Adicionar Novo Item</button>
+                     <button class="btn-small btn-table myBtn_multi">Adicionar Novo Serviço</button>
                 </div>
 
 
@@ -115,14 +117,106 @@
         </div>
     </div>
 
-  <!-- The Modal_1 -->
+  <!-- Modal-Edição -->
 
-    <div id="myModal" class="modal">
+    <div class="modal modal_multi editar">
      <!-- Modal content -->
         <div class="modal-content">
           <div class="modal-header">
-              <span class="close">&#xea0f;</span>
+              <span class="close close_multi">&#xea0f;</span>
+              <h2 class="subtitulo">Editar</h2>
+          </div>
+          <div class="modal-body wrapp">
+
+                  <div class="desc">
+                      <h3>Descrição:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Itens">
+                      </form>
+                  </div>
+                  <div class="desc">
+                      <h3>Valor:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Valor">
+                      </form>
+                  </div>
+
+                  <form action="" class="form-2">
+                    <button class="btn-grande btn-cancelar">Cancelar</button>
+                    <button class="btn-grande btn-salvar">Salvar</button>
+                 </form>
+          </div>
+              <div class="modal-footer">
+                  <h3> </h3>
+              </div>
+        </div>
+    </div>
+
+  <!-- Modal-Excluir -->
+
+    <div class="modal modal_multi excluir">
+     <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+              <span class="close close_multi">&#xea0f;</span>
+              <h2 class="subtitulo">Excluir</h2>
+          </div>
+          <div class="modal-body wrapp">
+
+                    <p>Tem certeza que deseja excluir esse item?</p>
+
+                  <form action="" class="form-2">
+                    <button class="btn-grande btn-cancelar">Cancelar</button>
+                    <button class="btn-grande btn-salvar">Salvar</button>
+                 </form>
+          </div>
+
+        </div>
+    </div>
+  <!-- Modal-Novo Item -->
+
+    <div class="modal modal_multi">
+     <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+              <span class="close close_multi">&#xea0f;</span>
               <h2 class="subtitulo">Novo Item Consumível</h2>
+          </div>
+          <div class="modal-body wrapp">
+
+                  <div class="desc">
+                      <h3>Descrição:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Itens">
+                      </form>
+                  </div>
+                  <div class="desc">
+                      <h3>Valor:</h3>
+                      <form action="" class="form">
+                          <input type="text" placeholder="Valor">
+                      </form>
+                  </div>
+
+                  <form action="" class="form-2">
+                    <button class="btn-grande btn-cancelar">Cancelar</button>
+                    <button class="btn-grande btn-salvar">Salvar</button>
+                 </form>
+          </div>
+              <div class="modal-footer">
+                  <h3> </h3>
+              </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Novo Serviço-->
+
+    <div class="modal modal_multi">
+     <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+              <span class="close close_multi">&#xea0f;</span>
+              <h2 class="subtitulo">Novo Item de Serviço</h2>
           </div>
           <div class="modal-body wrapp">
 
