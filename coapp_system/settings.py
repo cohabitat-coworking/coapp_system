@@ -44,10 +44,12 @@ INSTALLED_APPS = [
     'backend.apps.BackendConfig',
     'blog_cohabitat.apps.BlogCohabitatConfig',
     'rest_framework.authtoken',
-    'templated_docs'
+    'templated_docs',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -209,3 +211,4 @@ SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
+CORS_ORIGIN_ALLOW_ALL = True
