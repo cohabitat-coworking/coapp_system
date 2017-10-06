@@ -27,7 +27,7 @@ class CoworkingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Coworking
-        fields = ('id', 'name', 'cnpj', 'address', 'url')
+        fields = ('id', 'name', 'cnpj', 'address', 'url', 'logo')
         depth = 2
 
 
