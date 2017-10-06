@@ -23,11 +23,11 @@ class GenericAddressSerializer(serializers.ModelSerializer):
 
 
 class CoworkingSerializer(serializers.ModelSerializer):
-    address = GenericAddressSerializer()
+    address = serializers.CharField(source="address.description")
 
     class Meta:
         model = Coworking
-        fields = ('id', 'name', 'cnpj', 'address')
+        fields = ('id', 'name', 'cnpj', 'address', 'url')
         depth = 2
 
 
