@@ -1,4 +1,3 @@
-
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.shortcuts import render
@@ -13,16 +12,16 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(
         request,
-        'index.html',
+        'frontend_cohabitat/index.html',
     )
 
 
 def planos(request):
-    return render(request, 'planos.html')
+    return render(request, 'frontend_cohabitat/planos.html')
 
 
 def sobre(request):
-    return render(request, 'sobre.html')
+    return render(request, 'frontend_cohabitat/sobre.html')
 
 
 def send_email(request):
@@ -50,5 +49,4 @@ def send_email(request):
         logger.debug(response.body)
         logger.debug(response.headers)
 
-    return render(request, 'sobre.html')
-
+    return render(request, 'frontend_cohabitat/sobre.html')

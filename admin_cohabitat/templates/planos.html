@@ -94,24 +94,24 @@
                 <form action="" class="form">
 
                 </form>
-                <button class="btn-small btn-table myBtn_multi">Montar Plano</button>
+                <button class="btn-small btn-table" id="myBtn">Montar Plano</button>
             </div>
 
 
         </div>
     </div>
 
-<!-- Modais -->
-  <!-- Modal Criar Plano -->
+<!-- The Modal -->
 
-    <div class="modal modal_multi">
+    <div id="myModal" class="modal">
      <!-- Modal content -->
         <div class="modal-content">
           <div class="modal-header">
-              <span class="close close_multi">&#xea0f;</span>
+              <span class="close">&#xea0f;</span>
               <h2 class="subtitulo">Montar Plano</h2>
           </div>
           <div class="modal-body wrapp">
+
                   <div class="desc">
                       <h3>Descrição:</h3>
                       <form action="" class="form">
@@ -212,9 +212,6 @@
               </div>
         </div>
     </div>
-  <!-- Modal Excluir Plano -->
-  <!-- Modal Criar Plano -->
-  <!-- Modal Ver Plano -->
 
     <script src="{% static "admin_cohabitat/js/main.js" %}"></script>
 </body>

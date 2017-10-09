@@ -5,7 +5,7 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(
         request,
-        'index.html',
+        'frontend_cohabitat/index.html',
     )
 
 
@@ -14,4 +14,4 @@ def planos(request):
 
 
 def sobre(request):
-    return render(request, 'sobre.html')
+    return render(request, 'frontend_cohabitat/sobre.html')
