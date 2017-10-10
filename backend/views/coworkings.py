@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from ..serializers import *
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
 # coworkings/
@@ -68,3 +69,23 @@ class CoworkingDetail(APIView):
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except ObjectDoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+# coworkings/{coworking_id}/images
+class CoworkingLogoUpload(APIView):
+    authentication_classes = [TokenAuthentication, ]
+    permission_classes = [IsAuthenticated]
+
+    parser_classes = (MultiPartParser, FormParser,)
+
+    def post(self, request, coworking_id, format=None):
+
+        try:
+            coworking = Coworking.objects.get(pk=coworking_id)
+            image_to_upload = request.data['image']
+            coworking.logo = image_to_upload
+            coworking.save()
+            coworking_data = CoworkingSerializer(coworking)
+            return Response(data=coworking_data.data, status=status.HTTP_201_CREATED)
+        except:
+            return Response(status=status.HTTP_400_BAD_REQUEST)

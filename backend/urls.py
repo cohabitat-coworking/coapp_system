@@ -87,6 +87,8 @@ urlpatterns = [
 
                   url(r'^coworkings/teste/(?P<user_id>[0-9]+)', views.BillDetail.as_view()),
 
+                  url(r'^coworkings/(?P<coworking_id>[0-9]+)/images', views.CoworkingLogoUpload.as_view()),
+
                   url(r'^coworkings/(?P<coworking_id>[0-9]+)', views.CoworkingDetail.as_view()),
                   url(r'^coworkings', views.CoworkingList.as_view()),
                   url(r'^users/sign_in', views.UserSignIn.as_view()),
