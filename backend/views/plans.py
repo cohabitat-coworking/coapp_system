@@ -98,7 +98,7 @@ class PlanDetail(APIView):
             serializer = PlanCreationSerializer(plan, data=request.data["plan"], partial=True)
             if serializer.is_valid():
                 serializer.save()
-                return Response(status=status.HTTP_200_OK)
+                return Response(data=serializer.data, status=status.HTTP_200_OK)
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except ObjectDoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
