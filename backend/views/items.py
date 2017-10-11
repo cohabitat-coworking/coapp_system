@@ -42,7 +42,8 @@ class ItemDetail(APIView):
             serializer = ItemCreationSerializer(item, data=request.data["item"], partial=True)
             if serializer.is_valid():
                 serializer.save()
-                return Response(data=serializer.data, status=status.HTTP_200_OK)
+                patched_item = {"item": serializer.data}
+                return Response(data=patched_item, status=status.HTTP_200_OK)
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except ObjectDoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
@@ -88,6 +89,7 @@ class ItemTypesList(APIView):
         item_types["item_types"] = serializer.data
         return Response(item_types)
 
+
 # coworkings/{coworking_id}/items/{item_id}/images
 class ItemImageUpload(APIView):
     authentication_classes = [TokenAuthentication, ]
@@ -122,5 +124,3 @@ class ItemImageDetail(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-
-
